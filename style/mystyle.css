@@ -1,0 +1,571 @@
+/* ************* DUNG CHUNG ************* */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.border {
+    border: 1px solid #6DCFF6;
+}
+
+.no-bold {
+    font-weight: normal;
+}
+
+.background {
+    background: rgb(254, 255, 255);
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.margin-right-5 {
+    margin-right: 5px;
+}
+
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.wraper {
+    background: #E7F6FF;
+    padding: 0px 5px !important;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 650px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 850px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1050px;
+    }
+}
+
+
+/************ Xử lý top vien xanh ****************/
+
+.top {
+    background: url(../img/vien-top-xanh.png) no-repeat left center;
+    height: 18px;
+    font-size: 0.9em;
+    ;
+}
+
+@media (max-width: 991px) {
+    .top {
+        background: none;
+    }
+}
+
+.top img {
+    padding: 0px 3px 0px 13px;
+    height: 10px;
+}
+
+
+/* ********** TÙY CHỌN LẠI MÀU SẮC MENU ********** */
+
+.navbar-default {
+    background: linear-gradient(#fd5943, #e62006);
+    border-color: #e7e7e7;
+}
+
+.navbar-default .navbar-brand {
+    color: rgb(245, 245, 245);
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #b92222;
+    background-color: aquamarine;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(247, 222, 6);
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(7, 10, 218, 0.801);
+    background-color: aquamarine;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(7, 10, 218, 0.801);
+    background-color: aquamarine;
+}
+
+.navbar-default .navbar-nav>.disabled>a,
+.navbar-default .navbar-nav>.disabled>a:hover,
+.navbar-default .navbar-nav>.disabled>a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    color: rgba(7, 10, 218, 0.801);
+    background-color: aquamarine;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: rgb(248, 244, 244);
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+        color: rgba(7, 10, 218, 0.801);
+        background-color: aquamarine;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus {
+        color: rgba(7, 10, 218, 0.801);
+        background-color: aquamarine;
+    }
+}
+
+
+/* ********** TÙY CHỌN LẠI KÍCH THƯỚC MENU ********** */
+
+.navbar {
+    min-height: 30px;
+}
+
+.navbar-nav>li>a {
+    line-height: 30px;
+    font-size: 1.1em;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
+
+
+/* ****************** Xử lý main ******************* */
+
+.main-left {
+    width: 80%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+}
+
+.main-right {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 20%;
+    float: left;
+}
+
+@media (max-width:767px) {
+    .main-left {
+        width: 100%;
+    }
+    .main-right {
+        width: 100%;
+    }
+}
+
+
+/**************** module-left ********************/
+
+.module-left {
+    padding-right: 0px;
+}
+
+.layout-top {
+    min-height: 430px;
+    border: 1px solid #6DCFF6;
+    background: rgb(245, 245, 245);
+}
+
+.box-new {
+    padding: 0px 5px;
+}
+
+.header-new h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    line-height: 23px;
+    text-align: justify;
+}
+
+.header-new h4 a {
+    color: #000000;
+}
+
+.header-new img {
+    width: 100%;
+}
+
+.info p {
+    width: 100%;
+    text-align: justify;
+    line-height: 22px;
+    margin-top: 10px;
+    color: #000000;
+}
+
+.list-new {
+    padding: 5px 0px;
+}
+
+.list-new ul {
+    padding: 5px;
+    margin: 0;
+    list-style: none;
+}
+
+.list-new ul li {
+    width: 100%;
+    height: 75px;
+    text-align: justify;
+    overflow: hidden;
+    line-height: 24px;
+    padding: 5px 0;
+    border-bottom: 1px dashed dimgrey;
+}
+
+.list-new ul li img {
+    width: 35%;
+    height: 60px;
+    float: left;
+    padding-right: 5px;
+}
+
+.list-new ul li a span {
+    color: #3b3a3a;
+    font-weight: bold;
+}
+
+
+/*/****************  molude-center /**************** */
+
+
+/**************** * TIN MOI**********/
+
+.module-center {
+    background: #FFFFFF;
+    padding: 0px 5px 5px 0;
+}
+
+.title {
+    background: linear-gradient(#c75141, #b31c08);
+    text-shadow: 0px 1px 1px #fff;
+    font-family: arial !important;
+    font-size: 13px;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+    line-height: 27px;
+}
+
+.title a {
+    color: #f8fc01;
+}
+
+.tin-moi-body {
+    height: 396px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.tin-moi-body ul {
+    width: 100%;
+    padding-left: 10px;
+    list-style: none;
+}
+
+.tin-moi-body ul li {
+    text-align: justify;
+    padding-right: 5px;
+}
+
+.tin-moi-body ul li:before {
+    content: "•";
+    padding-right: 8px;
+    color: rgb(52, 52, 238);
+}
+
+.tin-moi-body ul li a {
+    color: #000000;
+    font-weight: normal;
+}
+
+
+/* tuy chinh thanh cuon scroll bar */
+
+.tin-moi-body::-webkit-scrollbar {
+    width: 7px;
+    background-color: black;
+}
+
+.tin-moi-body::-webkit-scrollbar-thumb {
+    background-color: rgb(172, 169, 169);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.tin-moi-body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 253, 253);
+}
+
+
+/* ******************* BOX-TIN ****************/
+
+.box {
+    padding: 0 5px 0 0;
+}
+
+.box-tin-body {
+    padding: 5px;
+    background: #FFFFFF;
+}
+
+.box-body-left {
+    padding: 10px 5px 10px 5px;
+}
+
+.box-body-left img {
+    width: 100%;
+}
+
+.box-body-right {
+    padding: 10px 5px 10px 5px;
+    text-align: justify;
+}
+
+.right-title a {
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.1em;
+}
+
+.body-bottom {}
+
+.ngay {
+    font-style: italic;
+    color: rgba(96, 97, 97, 0.918);
+    font-size: 0.8em;
+}
+
+.p-link {
+    background: url(../img/hv-more-news.jpg) no-repeat 0px 7px;
+    text-indent: 10px;
+}
+
+.p-link a {
+    font-weight: normal;
+    color: #161616;
+}
+
+
+/* ******************* CHI TIET - TIN ****************/
+
+.chi-tiet-tin {
+    background: #FFFFFF;
+    padding: 0 10px 0 0;
+    box-sizing: border-box;
+}
+
+.tdmuctin {
+    border-bottom: 2px solid #b92222;
+}
+
+.tdmuctin a {
+    font-weight: bold;
+    color: #b92222;
+    font-size: 1.3em;
+    height: 40px;
+    line-height: 40px;
+}
+
+.tieude {
+    font-weight: bold;
+    color: #0f0064;
+    font-size: 1.1em;
+    min-height: 30px;
+    line-height: 30px;
+}
+
+.tieude a {
+    color: #0f0064;
+}
+
+.ngaynhap {
+    margin-top: -10px;
+    font-size: 0.9em;
+    color: #808080;
+}
+
+
+/*************** module-right **************/
+
+.module-right {
+    padding-left: 0;
+}
+
+.img-right {
+    margin-bottom: 5px;
+}
+
+
+/*************** FOOTER **************/
+
+.footer-bar {
+    background: #1495e0;
+    height: 35px;
+    margin-top: 35px;
+}
+
+.footer-info {
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    background: rgb(248, 215, 154);
+}
+
+.footer-info p {
+    line-height: 15px;
+}
+
+.footer-info p:first-child {
+    font-weight: bold;
+}
+
+.pagination>li {
+    float: left;
+    margin-right: 1px;
+}
+
+.pagination>li button,
+.pagination>li>span {
+    position: relative;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.pagination>li button:hover,
+.pagination>li>span:hover,
+.pagination>li button:focus,
+.pagination>li>span:focus {
+    z-index: 2;
+    color: #23527c;
+    background-color: #eeeeee;
+    border-color: #ddd;
+}
+
+.pagination>li:first-child button,
+.pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination>li:last-child button,
+.pagination>li:last-child>span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.pagination>.active button,
+.pagination>.active>span,
+.pagination>.active button:hover,
+.pagination>.active>span:hover,
+.pagination>.active button:focus,
+.pagination>.active>span:focus {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.pagination>.disabled>span,
+.pagination>.disabled>span:hover,
+.pagination>.disabled>span:focus,
+.pagination>.disabled button,
+.pagination>.disabled button:hover,
+.pagination>.disabled button:focus {
+    color: #777777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border: 2px solid rgb(231, 19, 19);
+}
+
+
+/*************** HỘP TIN CÙNG CHUYÊN MỤC **************/
+
+.tin-chuyen-muc p {
+    font-weight: bold;
+    color: #942509;
+    margin-top: -10px;
+}
+
+.tin-chuyen-muc ul {
+    width: 100%;
+    padding-left: 10px;
+    list-style: none;
+}
+
+.tin-chuyen-muc ul li {
+    text-align: justify;
+    padding-right: 5px;
+}
+
+.tin-chuyen-muc ul li:before {
+    content: "•";
+    padding-right: 8px;
+}
+
+.tin-chuyen-muc ul li a {
+    color: rgb(2, 2, 58);
+}
+
+
+/* ************************************logined */
+
+.user {
+    color: #b31c08;
+}
+
+.form-group a {
+    color: darkblue;
+}

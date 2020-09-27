@@ -1,9 +1,9 @@
 <div class="col-sm-12 col-md-12 col-lg-12 title">
-    QUẢN LÝ TÀI KHOẢN
+    QUẢN LÝ ĐƠN VỊ
 </div>
 <?php 
-    $sql = "select * from users";
-    $tbusers = mysqli_query($con,$sql);
+    $sql = "select id, tendv, tendaydu, khoi, tt from donvi where trangthai = 1 order by khoi ASC, tt ASC";
+    $tbdonvi = mysqli_query($con,$sql);
     $act = "";
     if(isset($_GET["act"])){$act = $_GET["act"];}
     if ($act == "edit"){

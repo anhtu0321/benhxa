@@ -1,9 +1,6 @@
 <?php
-	if(!isset($_GET["view"])){
-		$view = "";
-	}else{
-		$view = $_GET["view"];
-	}
+	$view = "";
+	if(isset($_GET["view"])){$view = $_GET["view"];}
 ?>
 <div class="row">
     <div class="module-left main-left">

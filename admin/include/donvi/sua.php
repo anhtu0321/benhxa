@@ -8,7 +8,7 @@ $rs = mysqli_fetch_array($tb);
 <div class="col-sm-12 col-md-12 col-lg-12">
     <form action="include/donvi/xuly.php?form=<?php echo $form?>&id=<?php echo $id;?>" method="POST" class="form-horizontal" role="form">
             <div class="form-group">
-                <legend>Thêm đơn vị</legend>
+                <legend>Sửa đơn vị</legend>
             </div>
             <div class="form-group">
                 <label for="" class="control-label col-sm-2 no-padding">Ký hiệu đơn vị</label>
@@ -51,8 +51,8 @@ $rs = mysqli_fetch_array($tb);
             </div>
             <div class="form-group">
                 <div class="col-sm-10 col-sm-offset-2">
-                    <button type="submit" name="sua" class="btn btn-primary">Sửa Tài khoản</button>
-                    <button type="submit" name="xoa" class="btn btn-primary" onclick="return confirm('Muốn xóa thật à?');">Xóa Tài khoản</button>
+                    <button type="submit" name="sua" class="btn btn-primary">Sửa Đơn vị</button>
+                    <button type="submit" name="xoa" class="btn btn-primary" onclick="return confirm('Muốn xóa thật à?');">Xóa Đơn vị</button>
                 </div>
             </div>
     </form>

@@ -1,52 +1,73 @@
 
 <div class="col-sm-12 col-md-12 col-lg-12">
-    <form action="include/donvi/xuly.php?form=<?php echo $form?>" method="POST" class="form-horizontal" role="form">
-            <div class="form-group">
-                <legend>Thêm đơn vị</legend>
+   <form action="include/benhnhan/xuly.php?form=<?php echo $form?>" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+        <div class="form-group">
+            <legend>Thêm bệnh nhân</legend>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Họ tên</label>
+            <div class="col-sm-6">
+                <input type="text" name="hoten" class="form-control" placeholder="Họ tên">
             </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-2 no-padding">Ký hiệu đơn vị</label>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" name="tendv">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Năm sinh</label>
+            <div class="col-sm-6">
+                <input type="text" name="namsinh" class="form-control" placeholder="Năm sinh">
             </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-2 no-padding">Tên đầy đủ</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="tendaydu">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Giới tính</label>
+            <div class="col-sm-6">
+                <input name="gioitinh" type="radio" checked="checked" value="Nam" /> Nam
+                <input name="gioitinh" type="radio" value="Nữ" /> Nữ
             </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-2 no-padding">Khối</label>
-                <div class="col-sm-3">
-                    <select name="khoi" class="form-control">
-                        <option value="1">Ban Giám đốc</option>
-                        <option value="2">Trực thuộc</option>
-                        <option value="3">An ninh</option>
-                        <option value="4">Cảnh sát</option>
-                        <option value="5">huyện, thành phố</option>
-                    </select>
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Số hiệu CA</label>
+            <div class="col-sm-6">
+                <input type="text" name="sohieu" class="form-control" placeholder="Số hiệu Công an">
             </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-2 no-padding">Thứ tự</label>
-                <div class="col-sm-2">
-                    <input type="text" class="form-control" name="tt">
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Đơn vị</label>
+            <div class="col-sm-6">
+                <select name="donvi" class="form-control" placeholder="Đơn vị Công tác">
+                    <?php
+                        while ($rs = mysqli_fetch_array($tbdonvi)){
+                    ?>
+                            <option value="<?php echo $rs["id"];?>"><?php echo $rs["tendv"];?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-2 no-padding">Trạng thái</label>
-                <div class="col-sm-3">
-                    <select name="trangthai" class="form-control">
-                        <option value="1">Sử dụng</option>
-                        <option value="0">Không sử dụng</option>
-                    </select>
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Chức vụ</label>
+            <div class="col-sm-6">
+                <select name="chucvu" class="form-control" placeholder="Chức vụ Công tác">
+                    <?php
+                        while ($rscv = mysqli_fetch_array($tbchucvu)){
+                    ?>
+                            <option value="<?php echo $rscv["id"];?>"><?php echo $rscv["tenchucvu"];?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
             </div>
-            <div class="form-group">
-                <div class="col-sm-10 col-sm-offset-2">
-                    <button type="submit" class="btn btn-primary" name="them">Thêm đơn vị</button>
-                </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Nhóm máu</label>
+            <div class="col-sm-6">
+                <input type="text" name="nhommau" class="form-control" placeholder="Nhóm máu">
             </div>
-    </form>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-3 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary" name="them">Thêm bệnh nhân</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
+            </div>
+        </div>
+   </form>
 </div>

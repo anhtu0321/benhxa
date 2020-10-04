@@ -9,7 +9,7 @@
 		return obj;
 	}
 	var http = createObj();
-/********************************* XỬ LÝ CÁC CHỨC NĂNG CỬA TOOLTIPS, XỬ LÝ ĐỔI MẬT KHẨU VÀ ĐĂNG KÝ*****************/
+/********************************* XỬ LÝ LOGIN, XỬ LÝ ĐỔI MẬT KHẨU*****************/
 	function login(){
 		http.open("post","include/login.php",true);
 		http.onreadystatechange = xllogin;
@@ -27,7 +27,6 @@
 			 hostory.go(-1);*/
 		}
 	}
-	
 	function xlDoiMatKhau(){
 		http.open("post","include/xldoimatkhau.php",true);
 		http.onreadystatechange = xldoimatkhauprosess;
@@ -53,3 +52,13 @@
 			document.getElementById("tbdoipass").innerHTML = http.responseText;
 		}
 	}
+/********************************* XỬ LÝ SỰ KIỆN NHẬP HỌ TÊN, SỐ HIỆU TRONG FORM THÊM PHIẾU KHÁM *****************/
+var hoten = document.getElementById("hoten");
+hoten.addEventListener("keyup",locbenhnhan);
+function locbenhnhan(){
+	if(hoten.delay){clearTimeout(hoten.delay);}
+	hoten.delay = setTimeout(alet,1000);
+}
+function alet(){
+	alert("hoang van tu");
+}

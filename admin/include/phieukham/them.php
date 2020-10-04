@@ -17,7 +17,7 @@
             </div>
             <label for="" class="control-label col-sm-2">Số hiệu</label>
             <div class="col-sm-3">
-                <input type="text" name="sohieu" class="form-control" placeholder="Số hiệu Công an">
+                <input type="text" name="sohieu" id="sohieu" class="form-control" placeholder="Số hiệu Công an">
             </div>
         </div>
         <div class="form-group">
@@ -214,5 +214,5 @@
    </form>
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4">
-
+    <div id="showbenhnhan"></div>
 </div>

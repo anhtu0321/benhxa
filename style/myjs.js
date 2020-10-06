@@ -52,30 +52,3 @@
 			document.getElementById("tbdoipass").innerHTML = http.responseText;
 		}
 	}
-/********************************* XỬ LÝ SỰ KIỆN NHẬP HỌ TÊN, SỐ HIỆU TRONG FORM THÊM PHIẾU KHÁM *****************/
-var hoten = document.getElementById("hoten");
-var sohieu = document.getElementById("sohieu");
-sohieu.addEventListener("keyup",delaylocbenhnhan);
-hoten.addEventListener("keyup",delaylocbenhnhan);
-function delaylocbenhnhan(){
-	if(hoten.delay){clearTimeout(hoten.delay);}
-	hoten.delay = setTimeout(locketqua,1000);
-}
-function locketqua(){
-	http.open("post","include/phieukham/jslocketqua.php",true);
-	http.onreadystatechange = xllocketqua;
-	var formData = new FormData();
-	var ht = hoten.value;
-	var sh = sohieu.value;	
-	formData.append("ht",ht);
-	formData.append("sh",sh);
-	http.send(formData);
-}
-
-function xllocketqua(){
-	if(http.readyState == 4 & http.status == 200){
-		document.getElementById("showbenhnhan").innerHTML = http.responseText;
-		/*history.back();
-		 hostory.go(-1);*/
-	}
-}

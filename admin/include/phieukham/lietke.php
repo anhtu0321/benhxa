@@ -7,20 +7,21 @@
         <thead>
             <tr>
                 <th>TT</th>
+                <th>Năm</th>
                 <th>Họ tên</th>
-                <th>Giới tính</th>
                 <th>Năm sinh</th>
                 <th>Số hiệu</th>
                 <th>Đơn vị</th>
                 <th>Chức vụ</th>
-                <th>Nhóm máu</th>
+                <th>Phân loại</th>
+                <th>Bác sỹ kết luận</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <?php 
                 $i=0;
-                while($rs = mysqli_fetch_array($tbbenhnhan)){
+                while($rs = mysqli_fetch_array($tbphieukham)){
                     $i+=1;
                 ?>
                 <?php
@@ -28,13 +29,14 @@
                     }else{echo "<tr>";}
                 ?>
                     <td><?php echo $i; ?></td>
+                    <td><?php echo $rs["nam"]; ?></td>
                     <td><?php echo $rs["hoten"]; ?></td>
                     <td><?php echo $rs["namsinh"]; ?></td>
-                    <td><?php echo $rs["gioitinh"]; ?></td>
                     <td><?php echo $rs["sohieu"]; ?></td>
                     <td><?php echo $rs["tendv"]; ?></td>
                     <td><?php echo $rs["tenchucvu"]; ?></td>
-                    <td><?php echo $rs["nhommau"]; ?></td>
+                    <td><?php echo $rs["phanloai"]; ?></td>
+                    <td><?php echo $rs["bacsy"]; ?></td>
                     <td>
                         <a href="index.php?form=<?php echo $form?>&act=edit&id=<?php echo $rs["id"]?>">
                             <img src="img/b_edit.png">

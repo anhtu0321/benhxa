@@ -14,8 +14,6 @@ if(isset($_POST["nhommau"])){$nhommau = $_POST["nhommau"];}
 
 if(isset($_SESSION["user_huye_name"])){$nguoinhap = $_SESSION["user_huye_name"];}
 
-if(isset($_GET["filename"])){$filename = $_GET["filename"];}
-
 // Lấy thông tin phân quyền
     $sqlphanquyen = "select them, sua, xoa from phanquyen where user = '$_SESSION[user_huye_id]' and form = '$form'";
     $tbphanquyen = mysqli_query($con,$sqlphanquyen);

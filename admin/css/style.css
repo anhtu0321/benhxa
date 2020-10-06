@@ -104,3 +104,9 @@
   background-color: #fff;
   border: 2px solid rgb(231, 19, 19);
 }
+.tr:hover{
+  background:rgb(7, 172, 248) !important;
+  color:rgb(253, 249, 10);
+  cursor: pointer;
+  border-radius:5px;
+}

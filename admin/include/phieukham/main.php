@@ -3,8 +3,8 @@
     QUẢN LÝ PHIẾU KHÁM SỨC KHỎE ĐỊNH KỲ
 </div>
 <?php
-    // $sql = "select benhnhan.id, benhnhan.hoten, benhnhan.namsinh, benhnhan.gioitinh, benhnhan.sohieu, benhnhan.chucvu, benhnhan.nhommau, donvi.tendv, chucvu.tenchucvu from benhnhan left join donvi on benhnhan.donvi = donvi.id left join chucvu on benhnhan.chucvu = chucvu.id order by benhnhan.id desc limit 10";
-    // $tbbenhnhan= mysqli_query($con,$sql);
+    $sql = "select phieukham.id, phieukham.nam, phieukham.phanloai, phieukham.bacsy, benhnhan.hoten, benhnhan.namsinh, benhnhan.sohieu, donvi.tendv, chucvu.tenchucvu from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu left join donvi on phieukham.donvi = donvi.id left join chucvu on phieukham.chucvu = chucvu.id order by phieukham.id desc limit 10";
+    $tbphieukham= mysqli_query($con,$sql);
     $sql = "select id, tendv from donvi order by khoi asc, tt asc";
     $tbdonvi= mysqli_query($con,$sql);
     $sql = "select id, tenchucvu from chucvu order by capdo asc, id asc";

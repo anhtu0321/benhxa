@@ -26,7 +26,7 @@
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Số hiệu CA</label>
             <div class="col-sm-6">
-                <input type="text" name="sohieu" class="form-control" placeholder="Số hiệu Công an">
+                <input type="text" name="sohieu" id="sohieu" class="form-control" placeholder="Số hiệu Công an">
             </div>
         </div>
         <div class="form-group">
@@ -65,7 +65,7 @@
         </div>
         <div class="form-group">
             <div class="col-sm-3 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary" name="them">Thêm bệnh nhân</button>
+                <button type="submit" class="btn btn-primary" name="them" onclick = "return validate();">Thêm bệnh nhân</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
             </div>
         </div>

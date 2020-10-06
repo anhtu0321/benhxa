@@ -23,19 +23,19 @@
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Năm sinh</label>
             <div class="col-sm-3">
-                <input type="text" name="namsinh" class="form-control" placeholder="Năm sinh">
+                <input type="text" name="namsinh" id="namsinh" class="form-control" placeholder="Năm sinh">
             </div>
             <label for="" class="control-label col-sm-3">Giới tính</label>
            
             <div class="col-sm-3" style="padding:6px 0;">
-                <input name="gioitinh" type="radio" checked="checked" value="Nam" /> Nam
-                <input name="gioitinh" type="radio" value="Nữ" /> Nữ
+                <input name="gioitinh" id="nam" type="radio" checked="checked" value="Nam" /> Nam
+                <input name="gioitinh" id="nu" type="radio" value="Nữ" /> Nữ
             </div>
         </div>
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Đơn vị</label>
             <div class="col-sm-3">
-                <select name="donvi" class="form-control" placeholder="Đơn vị Công tác">
+                <select name="donvi" id="donvi" class="form-control" placeholder="Đơn vị Công tác">
                     <?php
                         while ($rs = mysqli_fetch_array($tbdonvi)){
                     ?>
@@ -47,7 +47,7 @@
             </div>
             <label for="" class="control-label col-sm-3">Chức vụ</label>
             <div class="col-sm-3">
-                <select name="chucvu" class="form-control" placeholder="Chức vụ Công tác">
+                <select name="chucvu" id="chucvu" class="form-control" placeholder="Chức vụ Công tác">
                     <?php
                         while ($rscv = mysqli_fetch_array($tbchucvu)){
                     ?>
@@ -81,7 +81,7 @@
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Nhóm máu</label>
             <div class="col-sm-3">
-                <input type="text" name="nhommau" class="form-control" placeholder="Nhóm máu">
+                <input type="text" name="nhommau" id="nhommau" class="form-control" placeholder="Nhóm máu">
             </div>
         </div>
         <div class="form-group">
@@ -207,12 +207,13 @@
         </div>
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary" name="them">Thêm Phiếu khám</button>
-                <button type="button" class="btn btn-primary" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
+                <button type="submit" class="btn btn-primary" name="them" onclick ="return validate();">Thêm Phiếu khám</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
             </div>
         </div>
    </form>
 </div>
 <div class="col-sm-4 col-md-4 col-lg-4">
+    <div id="thongbao"></div>
     <div id="showbenhnhan"></div>
 </div>

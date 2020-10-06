@@ -38,5 +38,5 @@
 <script src="../style/bootstrap341/js/jquery.js"></script>
 <script src="../style/bootstrap341/js/popper.min.js"></script>
 <script type="text/javascript" src="../style/bootstrap341/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../style/myjs.js"></script>
+<script type="text/javascript" src="css/myjs.js"></script>
 </html>

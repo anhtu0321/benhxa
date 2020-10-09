@@ -62,7 +62,7 @@
                 <label>Bác sỹ kết luận: </label>
                 <input type="text" name="bacsy" class="form-control" size="15" value="<?php echo $bacsy;?>" placeholder="Bác sỹ kết luận">
             </div>
-            <button type="submit" class="btn btn-success" name="taidulieu">Tải dữ liệu Bệnh nhân</button>
+            <button type="submit" class="btn btn-success" name="taidulieu">Tải dữ liệu</button>
         </form>
         
 </div>
@@ -75,7 +75,7 @@ if(isset($_POST["taidulieu"])){
         // Tính tổng số bản ghi
         $sql = "select count(phieukham.id) as tong from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu where phieukham.id > 0";
         if ($nam != ""){$sql = $sql." and phieukham.nam ='$nam'"; }
-        if ($hoten != ""){$sql = $sql." and benhnhan.hoten ='$hoten'"; }
+        if ($hoten != ""){$sql = $sql." and benhnhan.hoten like '%$hoten%'"; }
         if ($namsinh != ""){$sql = $sql." and benhnhan.namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sql = $sql." and phieukham.benhnhan ='$sohieu'"; }
         if ($donvi != ""){$sql = $sql." and phieukham.donvi ='$donvi'"; }
@@ -92,7 +92,7 @@ if(isset($_POST["taidulieu"])){
 
         $sqlphieukham = "select phieukham.id, phieukham.nam, phieukham.phanloai, phieukham.bacsy, benhnhan.hoten, benhnhan.namsinh, benhnhan.sohieu, donvi.tendv, chucvu.tenchucvu from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu left join donvi on phieukham.donvi = donvi.id left join chucvu on phieukham.chucvu = chucvu.id where benhnhan.id > 0";
         if ($nam != ""){$sqlphieukham = $sqlphieukham." and phieukham.nam ='$nam'"; }
-        if ($hoten != ""){$sqlphieukham = $sqlphieukham." and benhnhan.hoten ='$hoten'"; }
+        if ($hoten != ""){$sqlphieukham = $sqlphieukham." and benhnhan.hoten like '%$hoten%'"; }
         if ($namsinh != ""){$sqlphieukham = $sqlphieukham." and benhnhan.namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sqlphieukham = $sqlphieukham." and phieukham.benhnhan ='$sohieu'"; }
         if ($donvi != ""){$sqlphieukham = $sqlphieukham." and phieukham.donvi ='$donvi'"; }
@@ -190,7 +190,7 @@ if(isset($_POST["taidulieu"])){
                 if($trang == $i){echo "<li class='disabled'>";}else{echo "<li>";}?>
                     <form action = "index.php?form=<?php echo $form?>" method="POST"> 
                         <button type="submit" name="taidulieu"> <?php echo $i;?> 
-                            <input type="text" name = "trang" value ="1" hidden="true"> 
+                            <input type="text" name = "trang" value ="<?php echo $i;?>" hidden="true"> 
                             <input type="text" name = "nam" value ="<?php echo $nam;?>" hidden="true"> 
                             <input type="text" name = "hoten" value ="<?php echo $hoten;?>" hidden="true"> 
                             <input type="text" name = "namsinh" value ="<?php echo $namsinh;?>" hidden="true"> 
@@ -207,7 +207,7 @@ if(isset($_POST["taidulieu"])){
             <li>
                 <form action = "index.php?form=<?php echo $form?>" method="POST"> 
                     <button type="submit" name="taidulieu"> End 
-                        <input type="text" name = "trang" value ="1" hidden="true"> 
+                        <input type="text" name = "trang" value ="<?php echo $sotrang;?>" hidden="true"> 
                         <input type="text" name = "nam" value ="<?php echo $nam;?>" hidden="true"> 
                         <input type="text" name = "hoten" value ="<?php echo $hoten;?>" hidden="true"> 
                         <input type="text" name = "namsinh" value ="<?php echo $namsinh;?>" hidden="true"> 

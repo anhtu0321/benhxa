@@ -1,1 +1,6 @@
-bat dau
+1. Hoàn thành quản trị ... -> Xong
+    (Lưu ý mục trùng số hiệu trong thêm, sửa bệnh nhân; 
+    hiện tại nếu trùng thì không thực hiện, tuy nhiên chưa có cảnh báo
+    Cần có phương pháp khi hoàn thành dự án)
+2. Thiết kế trang chủ:
+- Đang tiến hành

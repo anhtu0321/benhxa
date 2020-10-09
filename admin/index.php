@@ -24,8 +24,7 @@
 <script src="ckeditor/ckeditor.js" type="text/javascript"></script>
 <script src="ckfinder/ckfinder.js" type="text/javascript"></script>
 <body>
-    
-    <div class="container">
+    <div class="container wraper">
         <div class="row">
             <?php include("include/banner.php"); ?>
             <?php include("include/menu.php"); ?>

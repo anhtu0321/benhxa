@@ -41,7 +41,7 @@ if(isset($_POST["xoa"])){
     if($rsphanquyen["xoa"]== 1){
         $sql = "delete from benhnhan where id = '$id'";
         mysqli_query($con,$sql);
-        header("location: ../../index.php?form=".$form);
+        header("location: ../../index.php?form=".$form."&act=add");
     }else{
         header("location: ../../index.php?form=".$form."&false=false");
     }

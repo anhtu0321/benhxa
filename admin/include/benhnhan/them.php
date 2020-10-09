@@ -66,7 +66,7 @@
         <div class="form-group">
             <div class="col-sm-3 col-sm-offset-3">
                 <button type="submit" class="btn btn-primary" name="them" onclick = "return validate();">Thêm bệnh nhân</button>
-                <button type="button" class="btn btn-primary" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
+                <button type="button" class="btn btn-warning" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
             </div>
         </div>
    </form>

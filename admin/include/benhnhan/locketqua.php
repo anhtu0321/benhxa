@@ -58,7 +58,7 @@ if(isset($_POST["taidulieu"])){
     <?php 
         // Tính tổng số bản ghi
         $sql = "select count(id) as tong from benhnhan where id > 0";
-        if ($hoten != ""){$sql = $sql." and hoten ='$hoten'"; }
+        if ($hoten != ""){$sql = $sql." and hoten like '%$hoten%'"; }
         if ($namsinh != ""){$sql = $sql." and namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sql = $sql." and sohieu ='$sohieu'"; }
         if ($donvi != ""){$sql = $sql." and donvi ='$donvi'"; }
@@ -72,7 +72,7 @@ if(isset($_POST["taidulieu"])){
         //Lấy dữ liệu trong cơ sở dữ liệu
 
         $sqlbenhnhan = "select benhnhan.id, benhnhan.hoten, benhnhan.namsinh, benhnhan.gioitinh, benhnhan.sohieu, benhnhan.chucvu, benhnhan.nhommau, donvi.tendv, chucvu.tenchucvu from benhnhan left join donvi on benhnhan.donvi = donvi.id left join chucvu on benhnhan.chucvu = chucvu.id where benhnhan.id > 0";
-        if ($hoten != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.hoten ='$hoten'"; }
+        if ($hoten != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.hoten like '%$hoten%'"; }
         if ($namsinh != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.sohieu ='$sohieu'"; }
         if ($donvi != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.donvi ='$donvi'"; }

@@ -92,18 +92,25 @@ if(isset($_POST["them"])){
 }
 if(isset($_POST["sua"])){
     if($rsphanquyen["sua"]== 1){
-        $sql = "update benhnhan set hoten = '$hoten', namsinh = '$namsinh', gioitinh = '$gioitinh',sohieu = '$sohieu',donvi = '$donvi', chucvu = '$chucvu', nhommau = '$nhommau' where id = '$id'";
+        $sql = "update benhnhan set hoten = '$hoten', namsinh = '$namsinh', gioitinh = '$gioitinh', nhommau = '$nhommau' where sohieu = '$sohieu'";
         mysqli_query($con,$sql);
+        echo $sql;
+        $sql = "update phieukham set nam='$nam',benhnhan='$sohieu', donvi='$donvi', chucvu='$chucvu', cannang='$cannang', chieucao='$chieucao', huyetap='$huyetap', mach='$mach', benhtiensu='$benhtiensu', tuanhoan='$tuanhoan', hohap='$hohap',
+            tieuhoa='$tieuhoa', tietnieu='$tietnieu', noitiet='$noitiet', thankinh='$thankinh', xuongkhop='$xuongkhop', taimuihong='$taimuihong', ranghammat='$ranghammat', mat='$mat', mau='$mau', sieuam='$sieuam', xqtimphoi='$xqtimphoi', nuoctieu='$nuoctieu', phanloai='$phanloai',
+            cacbenhtat='$cacbenhtat', bacsy='$bacsy', nguoinhap='$nguoinhap' where id = '$id'";
+        mysqli_query($con,$sql);
+        echo $sql;
         header("location: ../../index.php?form=".$form."&act=edit&id=".$id);
     }else{
         header("location: ../../index.php?form=".$form."&false=false");
     }
+    // Giải quyết vấn đề thay đổi số hiệu => disable va tao input hidden
 }
 if(isset($_POST["xoa"])){
     if($rsphanquyen["xoa"]== 1){
-        $sql = "delete from benhnhan where id = '$id'";
+        $sql = "delete from phieukham where id = '$id'";
         mysqli_query($con,$sql);
-        header("location: ../../index.php?form=".$form);
+        header("location: ../../index.php?form=".$form."&act=add");
     }else{
         header("location: ../../index.php?form=".$form."&false=false");
     }

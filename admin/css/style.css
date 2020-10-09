@@ -17,12 +17,14 @@
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
   }
+.wraper{
+  background:#d9edf7 ;
+}
 .banner{
     min-height:150px;
     background: #ceb97f;
 }
 .menu{
-    background: #f6f8f6;
     min-height: 500px;
 }
 .main{

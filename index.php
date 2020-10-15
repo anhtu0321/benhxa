@@ -35,6 +35,7 @@
             </div>
         </div>
     </div>
+    
     <div class="container-fluid menu">
         <div class="container no-padding">
             <div class="row">
@@ -99,11 +100,33 @@
     <div class="container">
         <div class="row wraper background">
             <div class="col-sm-12">
-                Ta la hoang van tu
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                v
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
+                Ta la hoang van tu</br>
             </div>
         </div>
     </div>
-    <div class="container-fluide">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 footer-bar"></div>
             <div class="col-sm-12 footer-info">

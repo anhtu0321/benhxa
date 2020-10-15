@@ -52,3 +52,13 @@
 			document.getElementById("tbdoipass").innerHTML = http.responseText;
 		}
 	}
+// Chay menu noi
+window.onscroll = function() {menuOnTop()};
+
+function menuOnTop() {
+  if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
+    document.getElementsByClassName("menu")[0].classList.add("ontop");
+  } else {
+    document.getElementsByClassName("menu")[0].classList.remove("ontop");
+  }
+}

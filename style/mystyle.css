@@ -65,6 +65,8 @@
 .menu{
     background:#00AEEF;
     height:46px;
+    width:100%;
+    z-index:500;
 }
 .navbar-nav {
     margin: 0 !important;
@@ -140,7 +142,6 @@
   }
   
 /* ********** TÙY CHỌN LẠI MÀU SẮC MENU ********** */
-
   .navbar-nav > li > a {
     color: rgb(255, 255, 255) !important;
   }
@@ -171,7 +172,6 @@
   }
 
 /* ********** TÙY CHỌN LẠI KÍCH THƯỚC MENU ********** */
-
 .navbar {
     min-height: 35px;
 }
@@ -182,8 +182,12 @@
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
-
+/* ****************** MENU NOI ******************* */
+.ontop{
+    position:fixed;
+    top:0;
+    left:0;
+}
 /* ****************** Xử lý main ******************* */
 
 .main-left {

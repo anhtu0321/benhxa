@@ -1,15 +1,27 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top">
-            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-right col-xs-push-6">
-                <img alt="" title="" src="img/ic-mail.png"><a href="#">Thư điện tử</a>
-                <img alt="" title="" src="img/ic-lienhe.png"><a href="#">Liên hệ</a>
+<div class="container-fluid top">
+        <div class="container no-padding">
+            <div class="row">
+                <div class="col-xs-7 text-left">
+                    <i class="glyphicon glyphicon-grain"></i> Bệnh xá Công an tỉnh Hưng Yên
+                </div>
+                <div class="col-xs-5 text-right">
+                <i class="glyphicon glyphicon-phone-alt"></i> 069 2849 273
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <img src="img/bannercat.jpg" class="img-responsive" alt="Image" width="100%">
+    <div class="container-fluid header">
+        <div class="container no-padding">
+            <div class="row">
+                <div class="col-xs-2 text-left">
+                    <img src="img/cahieu.png" class="img-responsive" alt="Image">
+                </div>
+                <div class="col-xs-5 text-center">
+                    PHẦN MỀM QUẢN LÝ HỒ SƠ C1
+                </div>
+                <div class="col-xs-5 text-right">
+                    
+                </div>
+            </div>
+        </div>
     </div>
- 
-
-</div>

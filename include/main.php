@@ -1,30 +1,25 @@
 <?php
-	$view = "";
-	if(isset($_GET["view"])){$view = $_GET["view"];}
+    $tab = "";
+    if(isset($_GET["tab"])){$tab = $_GET["tab"];}
+    $sql = "select id, tendv from donvi order by khoi asc, tt asc";
+    $tbdonvi= mysqli_query($con,$sql);
+    $sql = "select id, tenchucvu from chucvu order by capdo asc, id asc";
+    $tbchucvu= mysqli_query($con,$sql);
 ?>
-<div class="row">
-    <div class="module-left main-left">
-		<?php 
-			if($view == "chitiet"){
-				include("include/chitiettin.php");
-			}else if($view == "muctin"){
-				include("include/muctin.php");
-			}else if($view == "bcn"){
-				include("include/dsbaocaongay.php");
-			}else if($view == "pmmt"){
-				include("include/dspmmaytinh.php");
-			}
-			else{
-				include("include/main/center-left.php");
-				include("include/main/center-right.php");
-				include("include/main/khauhieu.php");
-				include("include/main/box-tin.php");
-			}
-		?>
-    </div>
-    <div class="no-padding main-right">
-		<?php
-			include("include/main/right.php");
-		?>
+<div class="container">
+    <div class="row wraper background">
+        <div class="col-sm-12">
+            <?php 
+                if($tab == "person"){ include("include/main/person.php");}
+                if($tab == "cb"){ include("include/main/cb.php");}
+                if($tab == "nk"){ include("include/main/nk.php");}
+                if($tab == "ck"){ include("include/main/ck.php");}
+                if($tab == "ls"){ include("include/main/ls.php");}
+                if($tab == "kl"){ include("include/main/kl.php");}
+                if($tab == "th"){ include("include/main/th.php");}
+                // if($tab == "person"){ include("include/main/person.php");}
+                if($tab == ""){ include("include/main/home.php");}
+            ?>
+        </div>
     </div>
 </div>

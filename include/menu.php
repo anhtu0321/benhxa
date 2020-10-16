@@ -1,49 +1,51 @@
-
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        
-        <nav class="navbar navbar-default navbar-static-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
-                
-<!-- Duyet csdl de lay menu -->
-<?php 
-    foreach($mangmuctin as $key => $value){
-?>
-        <li><a href="index.php?view=muctin&id=<?php echo $value['id'];?>"><?php echo $value['tenmuctin'];?></a></li>
-<?php
-    }
-?>                  
-<!-- Het -->
-                    
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Phần mềm ứng dụng <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="http://10.19.3.123/guinhanvb">PM gửi nhận văn bản</a></li>
-                            <li><a href="http://10.19.3.123/phuongtien">PM Quản lý phương tiện</a></li>
-                            <li><a href="http://10.19.3.123/taisan">PM quản lý tài sản</a></li>
-                            <li><a href="http://10.19.3.123/congviec">PM quản lý công việc</a></li>
-                            <li><a href="http://10.19.3.123/phanloaivv">PM phân loại vụ việc</a></li>
-                            <li><a href="http://10.19.3.123/congvan">PM Văn thư</a></li>
+<div class="container-fluid menu">
+    <div class="container no-padding">
+        <div class="row">
+            <div class="col-xs-12 no-padding">
+                <nav class="navbar" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".muc-tieu">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse muc-tieu">
+                        <ul class="nav navbar-nav">
+                            <li><a href="index.php">Trang chủ</a></li>
+                            <li><a href="index.php?tab=person">Tra cứu bệnh nhân</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="index.php?tab=note" class="dropdown-toggle" data-toggle="dropdown">Tra cứu phiếu khám <b class="caret"></b></a>
+                                <div>
+                                    <ul class="dropdown-content">
+                                        <li><a href="index.php?tab=cb">Thông tin cơ bản</a></li>
+                                        <li><a href="index.php?tab=nk">Khám nội khoa</a></li>
+                                        <li><a href="index.php?tab=ck">Khám chuyên khoa</a></li>
+                                        <li><a href="index.php?tab=ls">Khám cận lâm sàng</a></li>
+                                        <li><a href="index.php?tab=kl">Kết luận</a></li>
+                                        <li><a href="index.php?tab=th">Tra cứu tổng hợp</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thống kê <b class="caret"></b></a>
+                                <div>
+                                    <ul class="dropdown-content">
+                                        <li><a href="#">Cán bộ cao cấp</a></li>
+                                        <li><a href="#">Thống kê theo đơn vị</a></li>
+                                        <li><a href="#">Thống kê tổng hợp</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="admin/index.php">Quản trị</a>
                         </ul>
-                    </li>
-                    <li><a href="index.php?view=pmmt">Phần mềm máy tính</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-       
-
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </div>
     </div>
 </div>

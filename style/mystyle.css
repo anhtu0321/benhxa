@@ -36,9 +36,8 @@
 .margin-left-5 {
     margin-left: 5px;
 }
-
 .wraper {
-    background: #E7F6FF;
+    background: #eeeff0;
     /* padding: 0px 5px !important; */
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
 }
@@ -475,7 +474,6 @@
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
-    margin-bottom: 25px;
     background: rgb(248, 215, 154);
 }
 
@@ -486,7 +484,12 @@
 .footer-info p:first-child {
     font-weight: bold;
 }
-
+.footer-copyright {
+    background: #f5f3f3;
+    height: 50px;
+    line-height:50px;
+    color:#7a7a7a;
+}
 .pagination>li {
     float: left;
     margin-right: 1px;
@@ -553,41 +556,36 @@
 }
 
 
-/*************** HỘP TIN CÙNG CHUYÊN MỤC **************/
-
-.tin-chuyen-muc p {
-    font-weight: bold;
-    color: #942509;
-    margin-top: -10px;
+/*************** PHIẾU VÀ IN PHIẾU KHÁM **************/
+.phieu{
+    width: 21cm;
+    overflow:hidden;
+    min-height:297mm;
+    padding: 2cm 2cm 2cm 2.5cm;
+    margin-left:auto;
+    margin-right:auto;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
-
-.tin-chuyen-muc ul {
-    width: 100%;
-    padding-left: 10px;
-    list-style: none;
+.font-time div, 
+.font-time b, 
+.font-time p
+{
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size:16px;
 }
-
-.tin-chuyen-muc ul li {
-    text-align: justify;
-    padding-right: 5px;
+.header-left{
+    width:40%;
+    float:left;
+    text-align: center;
 }
-
-.tin-chuyen-muc ul li:before {
-    content: "•";
-    padding-right: 8px;
+.header-right{
+    width:60%;
+    float:right;
+    text-align: center;
 }
-
-.tin-chuyen-muc ul li a {
-    color: rgb(2, 2, 58);
-}
-
-
-/* ************************************logined */
-
-.user {
-    color: #b31c08;
-}
-
-.form-group a {
-    color: darkblue;
+.header-phieu, .header-phieu>b{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding-bottom:5px;
 }

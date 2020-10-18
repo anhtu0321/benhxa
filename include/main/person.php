@@ -3,45 +3,40 @@
     $namsinh="";
     $sohieu="";
     $donvi="";
+    $chucvu="";
+    $nhommau="";
     $trang="1";
     $id="";
     if(isset($_POST["hoten"])){$hoten = $_POST["hoten"];}
     if(isset($_POST["namsinh"])){$namsinh = $_POST["namsinh"];}
     if(isset($_POST["sohieu"])){$sohieu = $_POST["sohieu"];}
     if(isset($_POST["donvi"])){$donvi = $_POST["donvi"];}
+    if(isset($_POST["chucvu"])){$chucvu = $_POST["chucvu"];}
+    if(isset($_POST["nhommau"])){$nhommau = $_POST["nhommau"];}
     if(isset($_POST["trang"])){$trang = $_POST["trang"];}
     if(isset($_GET["id"])){$id = $_GET["id"];}
 ?>
 <!-- Form -->
 <div class="col-sm-12 col-md-12 col-lg-12">
     Nhập thông tin để tra cứu Bệnh nhân:
-        <form action="index.php?tab=person" method="POST" role="form">
-            <div class="col-sm-9">
+        <form action="index.php?tab=person" method="POST" role="form" class="form-horizontal">
             <div class="form-group">
                 <label for="" class="control-label col-sm-3">Họ tên</label>
-                <div class="col-sm-4">
-                    <input type="text" name="hoten" id="hoten" class="form-control" placeholder="Họ tên">
+                <div class="col-sm-3">
+                    <input type="text" name="hoten" id="hoten" class="form-control" value="<?php echo $hoten;?>" placeholder="Họ tên">
                 </div>
                 <label for="" class="control-label col-sm-2">Số hiệu</label>
-                <div class="col-sm-3">
-                    <input type="text" name="sohieu" id="sohieu" class="form-control" placeholder="Số hiệu Công an">
+                <div class="col-sm-2">
+                    <input type="text" name="sohieu" id="sohieu" class="form-control" value="<?php echo $sohieu;?>" placeholder="Số hiệu Công an">
                 </div>
             </div>
             <div class="form-group">
                 <label for="" class="control-label col-sm-3">Năm sinh</label>
-                <div class="col-sm-3">
-                    <input type="text" name="namsinh" id="namsinh" class="form-control" placeholder="Năm sinh">
+                <div class="col-sm-2">
+                    <input type="text" name="namsinh" id="namsinh" class="form-control" value="<?php echo $namsinh;?>" placeholder="Năm sinh">
                 </div>
-                <label for="" class="control-label col-sm-3">Giới tính</label>
-            
-                <div class="col-sm-3" style="padding:6px 0;">
-                    <input name="gioitinh" id="nam" type="radio" checked="checked" value="Nam" /> Nam
-                    <input name="gioitinh" id="nu" type="radio" value="Nữ" /> Nữ
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="" class="control-label col-sm-3">Đơn vị</label>
-                <div class="col-sm-3">
+                <div class="col-sm-2">
                     <select name="donvi" class="form-control" placeholder="Đơn vị Công tác">
                         <option value="">----- Tất cả -----</option>
                         <?php
@@ -53,6 +48,9 @@
                         ?>
                     </select>
                 </div>
+            </div>
+            <div class="form-group">
+                
                 <label for="" class="control-label col-sm-3">Chức vụ</label>
                 <div class="col-sm-3">
                     <select name="chucvu" id="chucvu" class="form-control" placeholder="Chức vụ Công tác">
@@ -60,21 +58,21 @@
                         <?php
                             while ($rscv = mysqli_fetch_array($tbchucvu)){
                         ?>
-                                <option value="<?php echo $rscv["id"];?>"><?php echo $rscv["tenchucvu"];?></option>
+                                <option value="<?php echo $rscv["id"];?>" <?php if($rscv["id"]==$chucvu){echo "selected='selected'";}?>><?php echo $rscv["tenchucvu"];?></option>
                         <?php
                             }
                         ?>
                     </select>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="" class="control-label col-sm-3">Nhóm máu</label>
-                <div class="col-sm-3">
-                    <input type="text" name="nhommau" id="nhommau" class="form-control" placeholder="Nhóm máu">
+                <label for="" class="control-label col-sm-2">Nhóm máu</label>
+                <div class="col-sm-2">
+                    <input type="text" name="nhommau" id="nhommau" class="form-control" value="<?php echo $nhommau;?>" placeholder="Nhóm máu">
                 </div>
             </div>
-        
-            <button type="submit" class="btn btn-success" name="taidulieu">Tra cứu Bệnh nhân</button>
+            <div class="form-group">
+                <div class="col-sm-5 col-sm-push-3">
+                    <button type="submit" class="btn btn-success" name="taidulieu">Tra cứu Bệnh nhân</button>
+                </div>
             </div>
         </form>
         
@@ -91,6 +89,8 @@ if(isset($_POST["taidulieu"])){
         if ($namsinh != ""){$sql = $sql." and namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sql = $sql." and sohieu ='$sohieu'"; }
         if ($donvi != ""){$sql = $sql." and donvi ='$donvi'"; }
+        if ($chucvu != ""){$sql = $sql." and chucvu ='$chucvu'"; }
+        if ($nhommau != ""){$sql = $sql." and nhommau ='$nhommau'"; }
         $tbtong = mysqli_query($con,$sql);
         $rstong = mysqli_fetch_array($tbtong);
         $tong = $rstong["tong"];
@@ -105,6 +105,8 @@ if(isset($_POST["taidulieu"])){
         if ($namsinh != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.namsinh ='$namsinh'"; }
         if ($sohieu != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.sohieu ='$sohieu'"; }
         if ($donvi != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.donvi ='$donvi'"; }
+        if ($chucvu != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.chucvu ='$chucvu'"; }
+        if ($nhommau != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.nhommau ='$nhommau'"; }
         $sqlbenhnhan = $sqlbenhnhan." order by donvi.khoi asc, donvi.tt, benhnhan.chucvu asc limit $vitribatdau,$num";
         $tbbenhnhan = mysqli_query($con, $sqlbenhnhan);
     ?>
@@ -113,50 +115,50 @@ if(isset($_POST["taidulieu"])){
         if($tong > 0){
     ?>
     <!-- Hiển thị danh sách bệnh nhân -->
-        <div class="col-sm-12 col-md-12 col-lg-12 margin-top-10">
-            <table class="table table-condensed table-hover">
-                <thead>
-                    <tr class="danger">
-                        <th>TT</th>
-                        <th>Họ tên</th>
-                        <th>Năm sinh</th>
-                        <th>Giới tính</th>
-                        <th><div class="text-center">Số hiệu</div></th>
-                        <th><div class="text-center">Đơn vị</div></th>
-                        <th><div class="text-center">Chức vụ</div></th>
-                        <th><div class="text-center">Nhóm máu</div></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                        $sothutu = 0;
-                        while($rs = mysqli_fetch_array($tbbenhnhan)){$sothutu++;
-                        ?>
-                        <?php
-                            if ($id == $rs["id"]){ echo "<tr class='success'>";
-                            }else{echo "<tr>";}
-                        ?>
-                            <td><?php echo $sothutu; ?></td>
-                            <td><?php echo $rs["hoten"]; ?></td>
-                            <td><?php echo $rs["namsinh"]; ?></td>
-                            <td><?php echo $rs["gioitinh"]; ?></td>
-                            <td align="center"><?php echo $rs["sohieu"]; ?></td>
-                            <td align="center"><?php echo $rs["tendv"]; ?></td>
-                            <td align="center"><?php echo $rs["tenchucvu"]; ?></td>
-                            <td align="center"><?php echo $rs["nhommau"]; ?></td>
-                            <td>
-                                <a href="index.php?tab=person_detail&id=<?php echo $rs["id"]?>">
-                                    Lịch sử khám
-                                </a>
-                            </td>
-                        </tr>
-                        <?php    
-                        }
+    <div class="col-sm-12 col-md-12 col-lg-12 margin-top-10">
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr class="success">
+                    <th>TT</th>
+                    <th>Họ tên</th>
+                    <th>Năm sinh</th>
+                    <th>Giới tính</th>
+                    <th><div class="text-center">Số hiệu</div></th>
+                    <th><div class="text-center">Đơn vị</div></th>
+                    <th><div class="text-center">Chức vụ</div></th>
+                    <th><div class="text-center">Nhóm máu</div></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    $sothutu = 0;
+                    while($rs = mysqli_fetch_array($tbbenhnhan)){$sothutu++;
                     ?>
-                </tbody>
-            </table>
-        </div>
+                    <?php
+                        if ($id == $rs["id"]){ echo "<tr class='success'>";
+                        }else{echo "<tr>";}
+                    ?>
+                        <td><?php echo $sothutu; ?></td>
+                        <td><?php echo $rs["hoten"]; ?></td>
+                        <td><?php echo $rs["namsinh"]; ?></td>
+                        <td><?php echo $rs["gioitinh"]; ?></td>
+                        <td align="center"><?php echo $rs["sohieu"]; ?></td>
+                        <td align="center"><?php echo $rs["tendv"]; ?></td>
+                        <td align="center"><?php echo $rs["tenchucvu"]; ?></td>
+                        <td align="center"><?php echo $rs["nhommau"]; ?></td>
+                        <td>
+                            <a href="index.php?tab=person_list&id=<?php echo $rs["id"]?>">
+                                Lịch sử khám
+                            </a>
+                        </td>
+                    </tr>
+                    <?php    
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
     <!-- Hết -->
     <?php
         }else{

@@ -222,6 +222,7 @@ $rs = mysqli_fetch_array($tb);
                 <button type="submit" class="btn btn-primary" name="sua">Cập nhật</button>
                 <button type="submit" class="btn btn-danger" name="xoa" onclick="return confirm('Muốn xóa thật à?');">Xóa phiếu khám</button>
                 <button type="button" class="btn btn-warning" onclick="window.location.href = 'index.php?form=<?php echo $form;?>'">Quay lại</button>
+                <!-- <a href = "javascript:history.back()">Back to previous page</a> -->
             </div>
         </div>
    </form>

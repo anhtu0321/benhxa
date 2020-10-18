@@ -7,10 +7,12 @@
     $tbchucvu= mysqli_query($con,$sql);
 ?>
 <div class="container">
-    <div class="row wraper background">
+    <div class="row wraper">
         <div class="col-sm-12">
             <?php 
                 if($tab == "person"){ include("include/main/person.php");}
+                if($tab == "person_list"){ include("include/main/person_list.php");}
+                if($tab == "person_detail"){ include("include/main/person_detail.php");}
                 if($tab == "cb"){ include("include/main/cb.php");}
                 if($tab == "nk"){ include("include/main/nk.php");}
                 if($tab == "ck"){ include("include/main/ck.php");}

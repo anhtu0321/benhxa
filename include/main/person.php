@@ -107,7 +107,7 @@ if(isset($_POST["taidulieu"])){
         if ($donvi != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.donvi ='$donvi'"; }
         if ($chucvu != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.chucvu ='$chucvu'"; }
         if ($nhommau != ""){$sqlbenhnhan = $sqlbenhnhan." and benhnhan.nhommau ='$nhommau'"; }
-        $sqlbenhnhan = $sqlbenhnhan." order by donvi.khoi asc, donvi.tt, benhnhan.chucvu asc limit $vitribatdau,$num";
+        $sqlbenhnhan = $sqlbenhnhan." order by donvi.khoi asc, donvi.tt asc, benhnhan.chucvu asc limit $vitribatdau,$num";
         $tbbenhnhan = mysqli_query($con, $sqlbenhnhan);
     ?>
     <!-- Hết -->

@@ -321,7 +321,11 @@
     border: 2px solid rgb(231, 19, 19);
 }
 
-
+/*************** KẾT QUẢ TRA CỨU **************/
+.thongbao{
+    font-weight: bold;
+    color:#881303;
+}
 /*************** PHIẾU VÀ IN PHIẾU KHÁM **************/
 .phieu{
     width: 21cm;

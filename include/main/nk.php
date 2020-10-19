@@ -1,4 +1,5 @@
 <?php 
+    $nam="2020";
     $tuanhoan="";
     $hohap="";
     $tieuhoa="";
@@ -8,6 +9,7 @@
     $xuongkhop="";
     $trang="1";
     $id="";
+    if(isset($_POST["nam"])){$nam = $_POST["nam"];}
     if(isset($_POST["tuanhoan"])){$tuanhoan = $_POST["tuanhoan"];}
     if(isset($_POST["hohap"])){$hohap = $_POST["hohap"];}
     if(isset($_POST["tieuhoa"])){$tieuhoa = $_POST["tieuhoa"];}
@@ -23,42 +25,46 @@
     <p class="tdmuctin"><span class="glyphicon glyphicon-th"></span> Tra cứu thông tin Khám nội khoa</p>
     <form action="index.php?tab=nk" method="POST" role="form" class="form-horizontal">
         <div class="form-group">
+            <label for="" class="control-label col-sm-2">Năm</label>
+            <div class="col-sm-3">
+                <input type="text" name="nam" class="form-control" value="<?php echo $nam;?>" placeholder="Năm">
+            </div>
             <label for="" class="control-label col-sm-2">Tuần hoàn</label>
             <div class="col-sm-3">
                 <input type="text" name="tuanhoan" class="form-control" value="<?php echo $tuanhoan;?>" placeholder="Tuần hoàn">
             </div>
+        </div>
+        <div class="form-group">
             <label for="" class="control-label col-sm-2">Hô hấp</label>
             <div class="col-sm-3">
                 <input type="text" name="hohap" class="form-control" value="<?php echo $hohap;?>" placeholder="Hô hấp">
             </div>
-        </div>
-        <div class="form-group">
             <label for="" class="control-label col-sm-2">Tiêu hóa</label>
             <div class="col-sm-3">
                 <input type="text" name="tieuhoa" class="form-control" value="<?php echo $tieuhoa;?>" placeholder="Tiêu hóa">
             </div>
+        </div>
+        <div class="form-group">
             <label for="" class="control-label col-sm-2">Thận - Tiết niệu</label>
             <div class="col-sm-3">
                 <input type="text" name="tietnieu" class="form-control" value="<?php echo $tietnieu;?>" placeholder="Thận - Tiết niệu"> 
             </div>
-        </div>
-        <div class="form-group">
-            
             <label for="" class="control-label col-sm-2">Nội tiết</label>
             <div class="col-sm-3">
                 <input type="text" name="noitiet" class="form-control" value="<?php echo $noitiet;?>" placeholder="Nội tiết"> 
             </div>
+        </div>
+        <div class="form-group">
             <label for="" class="control-label col-sm-2">Tâm - Thần kinh</label>
             <div class="col-sm-3">
                 <input type="text" name="thankinh" class="form-control" value="<?php echo $thankinh;?>" placeholder="Tâm - Thần kinh">
             </div>
-        </div>
-        <div class="form-group">
-
             <label for="" class="control-label col-sm-2">Cơ - Xương khớp</label>
             <div class="col-sm-3">
                 <input type="text" name="xuongkhop" class="form-control" value="<?php echo $xuongkhop;?>" placeholder="Cơ - Xương khớp">
             </div>
+        </div>
+        <div class="form-group">
             <div class="col-sm-5 col-sm-push-2">
                 <button type="submit" class="btn btn-success" name="taidulieu"><span class="glyphicon glyphicon-search"></span> Tra cứu</button>
             </div>
@@ -74,6 +80,7 @@ if(isset($_POST["taidulieu"])){
     <?php 
         // Tính tổng số bản ghi
         $sql = "select count(id) as tong from phieukham where id > 0";
+        if ($nam != ""){$sql = $sql." and nam ='$nam'"; }
         if ($tuanhoan != ""){$sql = $sql." and tuanhoan like '%$tuanhoan%'"; }
         if ($hohap != ""){$sql = $sql." and hohap like '%$hohap%'"; }
         if ($tieuhoa != ""){$sql = $sql." and tieuhoa like '%$tieuhoa%'"; }
@@ -91,61 +98,54 @@ if(isset($_POST["taidulieu"])){
         $vitribatdau = ($trang-1)*$num;
         //Lấy dữ liệu trong cơ sở dữ liệu
 
-        $sqlphieu = "select phieukham.id, phieukham.nam, phieukham.benhnhan, phieukham.cannang, phieukham.phanloai,  
-        phieukham.bacsy, benhnhan.hoten, benhnhan.namsinh, donvi.tendv from phieukham left join benhnhan 
-        on phieukham.benhnhan = benhnhan.sohieu left join donvi on phieukham.donvi = donvi.id where phieukham.id > 0";
-        if ($tuanhoan != ""){$sqlphieu = $sqlphieu." and tuanhoan like '%$tuanhoan%'"; }
-        if ($hohap != ""){$sqlphieu = $sqlphieu." and hohap like '%$hohap%'"; }
-        if ($tieuhoa != ""){$sqlphieu = $sqlphieu." and tieuhoa like '%$tieuhoa%'"; }
-        if ($tietnieu != ""){$sqlphieu = $sqlphieu." and tietnieu like '%$tietnieu%'"; }
-        if ($noitiet != ""){$sqlphieu = $sqlphieu." and noitiet like '%$noitiet%'"; }
-        if ($thankinh != ""){$sqlphieu = $sqlphieu." and thankinh like '%$thankinh%'"; }
-        if ($xuongkhop != ""){$sqlphieu = $sqlphieu." and xuongkhop like '%$xuongkhop%'"; }
-        $sqlphieu = $sqlphieu." order by donvi.khoi asc, donvi.tt, benhnhan.chucvu asc limit $vitribatdau,$num";
-        $tbphieu = mysqli_query($con, $sqlphieu);
+        $sqlbenhnhan = "select distinct phieukham.benhnhan, benhnhan.id, benhnhan.hoten, benhnhan.namsinh, donvi.tendv, 
+        chucvu.tenchucvu, donvi.khoi, donvi.tt, benhnhan.chucvu from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu left join donvi on 
+        benhnhan.donvi = donvi.id left join chucvu on benhnhan.chucvu = chucvu.id  
+        where phieukham.id>0";
+        if ($nam != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.nam = '$nam'"; }
+        if ($tuanhoan != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.tuanhoan like '%$tuanhoan%'"; }
+        if ($hohap != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.hohap like '%$hohap%'"; }
+        if ($tieuhoa != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.tieuhoa like '%$tieuhoa%'"; }
+        if ($tietnieu != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.tietnieu like '%$tietnieu%'"; }
+        if ($noitiet != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.noitiet like '%$noitiet%'"; }
+        if ($thankinh != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.thankinh like '%$thankinh%'"; }
+        if ($xuongkhop != ""){$sqlbenhnhan = $sqlbenhnhan." and phieukham.xuongkhop like '%$xuongkhop%'"; }
+        $sqlbenhnhan = $sqlbenhnhan." order by donvi.khoi asc, donvi.tt asc, benhnhan.chucvu asc limit $vitribatdau,$num";
+        $tbbenhnhan = mysqli_query($con, $sqlbenhnhan);
     ?>
     <!-- Hết -->
     <?php 
         if($tong > 0){
     ?>
     <!-- Hiển thị danh sách bệnh nhân -->
+    <div class="thongbao">Tổng số: <?php echo $tong?> bệnh nhân</div>
     <div class="col-sm-12 col-md-12 col-lg-12 margin-top-10">
     <table class="table table-condensed table-hover">
         <thead>
             <tr class="default">
                 <th>TT</th>
-                <th>Năm</th>
                 <th>Họ tên</th>
                 <th>Năm sinh</th>
-                <th><div class="text-center">Số hiệu</div></th>
-                <th><div class="text-center">Đơn vị</div></th>
-                <th><div class="text-center">Cân nặng</div></th>
-                <th><div class="text-center">Phanloai</div></th>
-               
-                <th><div class="text-center">Bác sỹ Kết luận</div></th>
+                <th>Đơn vị</th>
+                <th>Chức vụ</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             <?php 
                 $sothutu = 0;
-                while($rs = mysqli_fetch_array($tbphieu)){$sothutu++;
+                while($rs = mysqli_fetch_array($tbbenhnhan)){$sothutu++;
                 ?>
                 <tr>
                     <td><?php echo $sothutu; ?></td>
-                    <td><?php echo $rs["nam"]; ?></td>
+                    
                     <td><?php echo $rs["hoten"]; ?></td>
                     <td><?php echo $rs["namsinh"]; ?></td>
-                   
-                    <td align="center"><?php echo $rs["benhnhan"]; ?></td>
-                    <td align="center"><?php echo $rs["tendv"]; ?></td>
-                    <td align="center"><?php echo $rs["cannang"]; ?></td>
-                    <td align="center"><?php echo $rs["phanloai"]; ?></td>
-                
-                    <td align="center"><?php echo $rs["bacsy"]; ?></td>
+                    <td><?php echo $rs["tendv"]; ?></td>
+                    <td><?php echo $rs["tenchucvu"]; ?></td>
                     <td>
-                        <a href="index.php?tab=person_detail&id=<?php echo $rs["id"]?>">
-                            Chi tiết
+                        <a href="index.php?tab=person_list&id=<?php echo $rs["id"]?>">
+                            Lịch sử khám
                         </a>
                     </td>
                 </tr>
@@ -172,6 +172,7 @@ if(isset($_POST["taidulieu"])){
                 <form action = "index.php?tab=nk" method="POST"> 
                     <button type="submit" name="taidulieu"> First 
                         <input type="text" name = "trang" value ="1" hidden="true"> 
+                        <input type="text" name = "nam" value ="<?php echo $nam;?>" hidden="true">
                         <input type="text" name = "tuanhoan" value ="<?php echo $tuanhoan;?>" hidden="true"> 
                         <input type="text" name = "hohap" value ="<?php echo $hohap;?>" hidden="true"> 
                         <input type="text" name = "tieuhoa" value ="<?php echo $tieuhoa;?>" hidden="true"> 
@@ -194,6 +195,7 @@ if(isset($_POST["taidulieu"])){
                     <form action = "index.php?tab=nk" method="POST"> 
                         <button type="submit" name="taidulieu"> <?php echo $i;?> 
                             <input type="text" name = "trang" value ="<?php echo $i;?>" hidden="true"> 
+                            <input type="text" name = "nam" value ="<?php echo $nam;?>" hidden="true">
                             <input type="text" name = "tuanhoan" value ="<?php echo $tuanhoan;?>" hidden="true"> 
                             <input type="text" name = "hohap" value ="<?php echo $hohap;?>" hidden="true"> 
                             <input type="text" name = "tieuhoa" value ="<?php echo $tieuhoa;?>" hidden="true"> 
@@ -211,6 +213,7 @@ if(isset($_POST["taidulieu"])){
                 <form action = "index.php?tab=nk" method="POST"> 
                     <button type="submit" name="taidulieu"> End 
                         <input type="text" name = "trang" value ="<?php echo $sotrang;?>" hidden="true"> 
+                        <input type="text" name = "nam" value ="<?php echo $nam;?>" hidden="true">
                         <input type="text" name = "tuanhoan" value ="<?php echo $tuanhoan;?>" hidden="true"> 
                         <input type="text" name = "hohap" value ="<?php echo $hohap;?>" hidden="true"> 
                         <input type="text" name = "tieuhoa" value ="<?php echo $tieuhoa;?>" hidden="true"> 

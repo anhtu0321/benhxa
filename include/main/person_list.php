@@ -3,7 +3,8 @@
     if(isset($_GET["id"])){$id = $_GET["id"];}
     $sql = "select phieukham.id, phieukham.nam, phieukham.benhnhan, phieukham.cannang, phieukham.phanloai,  
     phieukham.bacsy, benhnhan.hoten, benhnhan.namsinh, donvi.tendv from phieukham left join benhnhan 
-    on phieukham.benhnhan = benhnhan.sohieu left join donvi on phieukham.donvi = donvi.id where benhnhan.id = '$id'";
+    on phieukham.benhnhan = benhnhan.sohieu left join donvi on phieukham.donvi = donvi.id where benhnhan.id = '$id' 
+    order by phieukham.nam DESC";
     $tb = mysqli_query($con,$sql);
 ?>
 <div class="col-sm-12 col-md-12 col-lg-12 margin-top-10">
@@ -18,7 +19,6 @@
                 <th><div class="text-center">Đơn vị</div></th>
                 <th><div class="text-center">Cân nặng</div></th>
                 <th><div class="text-center">Phanloai</div></th>
-               
                 <th><div class="text-center">Bác sỹ Kết luận</div></th>
                 <th></th>
             </tr>

@@ -10,8 +10,9 @@
 <body>
     <?php include("admin/config.php");?>
     <?php include("include/banner.php");?>
+   
     <?php include("include/menu.php");?>
-    <div class="xoa"></div>
+   
     <?php include("include/main.php");?>
     <?php include("include/footer.php");?>
 </body>

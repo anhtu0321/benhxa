@@ -18,16 +18,16 @@
 ?>
 <!-- Form -->
 <div class="col-sm-12 col-md-12 col-lg-12">
-    Nhập thông tin để tra cứu Bệnh nhân:
+    <p class="tdmuctin"><span class="glyphicon glyphicon-th"></span> Tra cứu bệnh nhân</p>
         <form action="index.php?tab=person" method="POST" role="form" class="form-horizontal">
             <div class="form-group">
                 <label for="" class="control-label col-sm-3">Họ tên</label>
                 <div class="col-sm-3">
-                    <input type="text" name="hoten" id="hoten" class="form-control" value="<?php echo $hoten;?>" placeholder="Họ tên">
+                    <input type="text" name="hoten" class="form-control" value="<?php echo $hoten;?>" placeholder="Họ tên">
                 </div>
                 <label for="" class="control-label col-sm-2">Số hiệu</label>
                 <div class="col-sm-2">
-                    <input type="text" name="sohieu" id="sohieu" class="form-control" value="<?php echo $sohieu;?>" placeholder="Số hiệu Công an">
+                    <input type="text" name="sohieu" class="form-control" value="<?php echo $sohieu;?>" placeholder="Số hiệu Công an">
                 </div>
             </div>
             <div class="form-group">
@@ -71,7 +71,7 @@
             </div>
             <div class="form-group">
                 <div class="col-sm-5 col-sm-push-3">
-                    <button type="submit" class="btn btn-success" name="taidulieu">Tra cứu Bệnh nhân</button>
+                    <button type="submit" class="btn btn-success" name="taidulieu"><span class="glyphicon glyphicon-search"></span> Tra cứu</button>
                 </div>
             </div>
         </form>

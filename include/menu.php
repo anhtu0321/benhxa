@@ -1,4 +1,4 @@
-<div class="container-fluid menu">
+<div class="container-fluid menu" id="menu">
     <div class="container no-padding">
         <div class="row">
             <div class="col-xs-12 no-padding">
@@ -19,10 +19,9 @@
                             <li><a href="index.php?tab=person">Tra cứu bệnh nhân</a>
                             </li>
                             <li class="dropdown">
-                                <a href="index.php?tab=note" class="dropdown-toggle" data-toggle="dropdown">Tra cứu phiếu khám <b class="caret"></b></a>
+                                <a href="index.php?tab=note" class="dropdown-toggle" data-toggle="dropdown">Tra cứu hồ sơ <b class="caret"></b></a>
                                 <div>
                                     <ul class="dropdown-content">
-                                        <li><a href="index.php?tab=cb">Thông tin cơ bản</a></li>
                                         <li><a href="index.php?tab=nk">Khám nội khoa</a></li>
                                         <li><a href="index.php?tab=ck">Khám chuyên khoa</a></li>
                                         <li><a href="index.php?tab=ls">Khám cận lâm sàng</a></li>

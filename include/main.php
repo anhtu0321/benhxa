@@ -7,8 +7,8 @@
     $tbchucvu= mysqli_query($con,$sql);
 ?>
 <div class="container">
-    <div class="row wraper">
-        <div class="col-sm-12">
+    <div class="row">
+        <div class="col-sm-12 wraper">
             <?php 
                 if($tab == "person"){ include("include/main/person.php");}
                 if($tab == "person_list"){ include("include/main/person_list.php");}

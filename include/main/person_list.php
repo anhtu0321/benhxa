@@ -54,6 +54,6 @@
 </div>
 <div class="col-sm-2 col-sm-push-10 text-right margin-bottom-5">
     <!-- <a href="javascript:history.back();">Quay lại</a> -->
-    <button class="btn btn-sm btn-warning" onClick="history.go(-1);">Quay lại</button>
+    <button class="btn btn-sm btn-warning" onClick="history.go(-1);"><i class="glyphicon glyphicon-circle-arrow-left"></i> Quay lại</button>
 
 </div>

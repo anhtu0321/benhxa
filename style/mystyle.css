@@ -8,40 +8,30 @@
 .no-margin {
     margin: 0 !important;
 }
-
 .no-padding {
     padding: 0 !important;
 }
-
 .border {
     border: 1px solid #6DCFF6;
 }
-
 .no-bold {
     font-weight: normal;
 }
-
 .background {
     background: rgb(152, 199, 199);
 }
-
 .margin-bottom-5 {
     margin-bottom: 5px;
 }
-
 .margin-right-5 {
     margin-right: 5px;
 }
-
 .margin-left-5 {
     margin-left: 5px;
 }
-.wraper {
-    background: #eeeff0;
-    /* padding: 0px 5px !important; */
-    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+.margin-top-5 {
+    margin-top: 5px;
 }
-
 /************ HEADER ****************/
 .top {
     background: #F5F5F5;
@@ -50,7 +40,6 @@
     line-height:40px;
 }
 .header{
-    /* background:#1495e0; */
     background: url("../img/header.png") no-repeat center;
     background-size: cover;
     min-height: 130px;
@@ -59,7 +48,6 @@
     padding: 0px 3px 0px 13px;
     height: 10px;
 }
-
 /* ********** TÙY CHỌN MENU ********** */
 .menu{
     background:#00AEEF;
@@ -90,7 +78,6 @@
     position:absolute;
     clip: rect(1px,9999px,9999px,-9999px);
 }
-
 .dropdown:hover .dropdown-content{
     transform: translate(0,0);
     display:block;
@@ -174,7 +161,6 @@
 .navbar {
     min-height: 35px;
 }
-
 .navbar-nav>li>a {
     line-height: 35px;
     font-size: 1.1em;
@@ -188,230 +174,10 @@
     left:0;
 }
 /* ****************** Xử lý main ******************* */
-
-.main-left {
-    width: 80%;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
+.wraper {
+    background: #eeeff0;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
 }
-
-.main-right {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    width: 20%;
-    float: left;
-}
-
-@media (max-width:767px) {
-    .main-left {
-        width: 100%;
-    }
-    .main-right {
-        width: 100%;
-    }
-}
-
-
-/**************** module-left ********************/
-
-.module-left {
-    padding-right: 0px;
-}
-
-.layout-top {
-    min-height: 430px;
-    border: 1px solid #6DCFF6;
-    background: rgb(245, 245, 245);
-}
-
-.box-new {
-    padding: 0px 5px;
-}
-
-.header-new h4 {
-    font-size: 1.1em;
-    font-weight: bold;
-    line-height: 23px;
-    text-align: justify;
-}
-
-.header-new h4 a {
-    color: #000000;
-}
-
-.header-new img {
-    width: 100%;
-}
-
-.info p {
-    width: 100%;
-    text-align: justify;
-    line-height: 22px;
-    margin-top: 10px;
-    color: #000000;
-}
-
-.list-new {
-    padding: 5px 0px;
-}
-
-.list-new ul {
-    padding: 5px;
-    margin: 0;
-    list-style: none;
-}
-
-.list-new ul li {
-    width: 100%;
-    height: 75px;
-    text-align: justify;
-    overflow: hidden;
-    line-height: 24px;
-    padding: 5px 0;
-    border-bottom: 1px dashed dimgrey;
-}
-
-.list-new ul li img {
-    width: 35%;
-    height: 60px;
-    float: left;
-    padding-right: 5px;
-}
-
-.list-new ul li a span {
-    color: #3b3a3a;
-    font-weight: bold;
-}
-
-
-/*/****************  molude-center /**************** */
-
-
-/**************** * TIN MOI**********/
-
-.module-center {
-    background: #FFFFFF;
-    padding: 0px 5px 5px 0;
-}
-
-.title {
-    background: linear-gradient(#c75141, #b31c08);
-    text-shadow: 0px 1px 1px #fff;
-    font-family: arial !important;
-    font-size: 13px;
-    text-align: left;
-    font-weight: bold;
-    padding-left: 10px;
-    line-height: 27px;
-}
-
-.title a {
-    color: #f8fc01;
-}
-
-.tin-moi-body {
-    height: 396px;
-    box-sizing: border-box;
-    overflow-y: scroll;
-    margin-right: 5px;
-    margin-top: 5px;
-}
-
-.tin-moi-body ul {
-    width: 100%;
-    padding-left: 10px;
-    list-style: none;
-}
-
-.tin-moi-body ul li {
-    text-align: justify;
-    padding-right: 5px;
-}
-
-.tin-moi-body ul li:before {
-    content: "•";
-    padding-right: 8px;
-    color: rgb(52, 52, 238);
-}
-
-.tin-moi-body ul li a {
-    color: #000000;
-    font-weight: normal;
-}
-
-
-/* tuy chinh thanh cuon scroll bar */
-
-.tin-moi-body::-webkit-scrollbar {
-    width: 7px;
-    background-color: black;
-}
-
-.tin-moi-body::-webkit-scrollbar-thumb {
-    background-color: rgb(172, 169, 169);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.tin-moi-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: rgb(255, 253, 253);
-}
-
-
-/* ******************* BOX-TIN ****************/
-
-.box {
-    padding: 0 5px 0 0;
-}
-
-.box-tin-body {
-    padding: 5px;
-    background: #FFFFFF;
-}
-
-.box-body-left {
-    padding: 10px 5px 10px 5px;
-}
-
-.box-body-left img {
-    width: 100%;
-}
-
-.box-body-right {
-    padding: 10px 5px 10px 5px;
-    text-align: justify;
-}
-
-.right-title a {
-    font-weight: bold;
-    color: #000000;
-    font-size: 1.1em;
-}
-
-.body-bottom {}
-
-.ngay {
-    font-style: italic;
-    color: rgba(96, 97, 97, 0.918);
-    font-size: 0.8em;
-}
-
-.p-link {
-    background: url(../img/hv-more-news.jpg) no-repeat 0px 7px;
-    text-indent: 10px;
-}
-
-.p-link a {
-    font-weight: normal;
-    color: #161616;
-}
-
-
 /* ******************* CHI TIET - TIN ****************/
 
 .chi-tiet-tin {
@@ -424,10 +190,10 @@
     border-bottom: 2px solid #b92222;
 }
 
-.tdmuctin a {
+.tdmuctin{
     font-weight: bold;
     color: #b92222;
-    font-size: 1.3em;
+    font-size: 1.2em;
     height: 40px;
     line-height: 40px;
 }
@@ -561,31 +327,57 @@
     width: 21cm;
     overflow:hidden;
     min-height:297mm;
-    padding: 2cm 2cm 2cm 2.5cm;
+    padding: 1.5cm 1.5cm 1.5cm 2.5cm;
     margin-left:auto;
     margin-right:auto;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+.phieu p{
+    margin:0;
+    margin-left:-10px;
+}
 .font-time div, 
 .font-time b, 
-.font-time p
+.font-time p,
+.font-time i
 {
     font-family: 'Times New Roman', Times, serif !important;
     font-size:16px;
 }
 .header-left{
-    width:40%;
+    width:35%;
     float:left;
     text-align: center;
 }
 .header-right{
-    width:60%;
+    width:65%;
     float:right;
     text-align: center;
 }
-.header-phieu, .header-phieu>b{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 16px;
-    padding-bottom:5px;
+.header-right b{
+    font-size:20px;
+}
+.tbphieu{
+    margin:5px 0;
+}
+.tbphieu tr,
+.tbphieu th,
+.tbphieu td{
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size:16px;
+}
+.tbphieu th{
+    text-align:center;
+    vertical-align: middle !important;
+}
+.footer-left{
+    width:35%;
+    float:left;
+    text-align: center;
+}
+.footer-right{
+    width:65%;
+    float:right;
+    text-align: center;
 }

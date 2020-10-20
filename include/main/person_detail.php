@@ -125,14 +125,13 @@
         <b><?php echo $rs["bacsy"];?></b>
     </div>
 </div>
+<!-- XỬ LÝ TẠO FILE WORD     -->
 <?php
 $zip = new ZipArchive();
- 
-$filename_goc = 'testfile.docx';
-$filename = 'testfile_down.docx';
+$filename_goc = 'phieugoc.docx';
+$filename = 'phieu_down.docx';
 // Copy một bản sao từ file gốc
 copy($filename_goc, $filename);
- 
 // Mở file đã copy
 if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
     echo "Cannot open $filename :( "; die;
@@ -141,10 +140,33 @@ if ($zip->open($filename, ZipArchive::CREATE)!==TRUE) {
 $xml = $zip->getFromName('word/document.xml');
  
 // Dùng hàm str_replace để thay đổi text trong file
-$xml = str_replace('aaa', $rs["hoten"], $xml);
-$xml = str_replace('bbb', $rs["sohieu"], $xml);
-$xml = str_replace('ccc', $rs["tendv"], $xml);
- 
+$xml = str_replace('nnnn', $rs["nam"], $xml);
+$xml = str_replace('hoten', $rs["hoten"], $xml);
+$xml = str_replace('sohieu', $rs["sohieu"], $xml);
+$xml = str_replace('namsinh', $rs["namsinh"], $xml);
+$xml = str_replace('gioitinh', $rs["gioitinh"], $xml);
+$xml = str_replace('chieucao', $rs["chieucao"], $xml);
+$xml = str_replace('cannang', $rs["cannang"], $xml);
+$xml = str_replace('huyetap', $rs["huyetap"], $xml);
+$xml = str_replace('mach', $rs["mach"], $xml);
+$xml = str_replace('nhnh', $rs["nhommau"], $xml);
+$xml = str_replace('benhtiensu', $rs["benhtiensu"], $xml);
+$xml = str_replace('tuanhoan', $rs["tuanhoan"], $xml);
+$xml = str_replace('hohap', $rs["hohap"], $xml);
+$xml = str_replace('tieuhoa', $rs["tieuhoa"], $xml);
+$xml = str_replace('tietnieu', $rs["tietnieu"], $xml);
+$xml = str_replace('noitiet', $rs["noitiet"], $xml);
+$xml = str_replace('thankinh', $rs["thankinh"], $xml);
+$xml = str_replace('xuongkhop', $rs["xuongkhop"], $xml);
+$xml = str_replace('taimuihong', $rs["taimuihong"], $xml);
+$xml = str_replace('ranghammat', $rs["ranghammat"], $xml);
+$xml = str_replace('mmmm', $rs["mau"], $xml);
+$xml = str_replace('mama', $rs["mat"], $xml);
+$xml = str_replace('sieuam', $rs["sieuam"], $xml);
+$xml = str_replace('xqtimphoi', $rs["xqtimphoi"], $xml);
+$xml = str_replace('phanloai', $rs["phanloai"], $xml);
+$xml = str_replace('cacbenhtat', $rs["cacbenhtat"], $xml);
+$xml = str_replace('bacsy', $rs["bacsy"], $xml);
 // Ghi lại nội dung đã được đổi vào file
 if ($zip->addFromString('word/document.xml', $xml)) {  }
 else { echo 'File not written.  Go back and add write permissions to this folder!'; }

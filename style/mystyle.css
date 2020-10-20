@@ -177,6 +177,7 @@
 .wraper {
     background: #eeeff0;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
+    min-height:500px;
 }
 /* ******************* CHI TIET - TIN ****************/
 
@@ -324,7 +325,10 @@
 /*************** KẾT QUẢ TRA CỨU **************/
 .thongbao{
     font-weight: bold;
-    color:#881303;
+    color:#1f1e1e;
+}
+.thongbao span{
+    color:#d31a02;
 }
 /*************** PHIẾU VÀ IN PHIẾU KHÁM **************/
 .phieu{

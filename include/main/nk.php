@@ -79,7 +79,7 @@ if(isset($_POST["taidulieu"])){
     <!-- Tính toán thông số để phân trang -->
     <?php 
         // Tính tổng số bản ghi
-        $sql = "select count(id) as tong from phieukham where id > 0";
+        $sql = "select distinct benhnhan from phieukham where id > 0";
         if ($nam != ""){$sql = $sql." and nam ='$nam'"; }
         if ($tuanhoan != ""){$sql = $sql." and tuanhoan like '%$tuanhoan%'"; }
         if ($hohap != ""){$sql = $sql." and hohap like '%$hohap%'"; }
@@ -90,8 +90,7 @@ if(isset($_POST["taidulieu"])){
         if ($xuongkhop != ""){$sql = $sql." and xuongkhop like '%$xuongkhop%'"; }
 
         $tbtong = mysqli_query($con,$sql);
-        $rstong = mysqli_fetch_array($tbtong);
-        $tong = $rstong["tong"];
+        $tong = mysqli_num_rows($tbtong);
         // Các thông số để phân trang
         $num = 10;
         $sotrang = ceil($tong/$num);
@@ -118,7 +117,7 @@ if(isset($_POST["taidulieu"])){
         if($tong > 0){
     ?>
     <!-- Hiển thị danh sách bệnh nhân -->
-    <div class="thongbao">Tổng số: <?php echo $tong?> bệnh nhân</div>
+    <div class="thongbao">Tổng số: <span><?php echo $tong?></span> bệnh nhân</div>
     <div class="col-sm-12 col-md-12 col-lg-12 margin-top-10">
     <table class="table table-condensed table-hover">
         <thead>
@@ -138,7 +137,6 @@ if(isset($_POST["taidulieu"])){
                 ?>
                 <tr>
                     <td><?php echo $sothutu; ?></td>
-                    
                     <td><?php echo $rs["hoten"]; ?></td>
                     <td><?php echo $rs["namsinh"]; ?></td>
                     <td><?php echo $rs["tendv"]; ?></td>

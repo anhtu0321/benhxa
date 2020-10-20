@@ -26,7 +26,6 @@
                                         <li><a href="index.php?tab=ck">Khám chuyên khoa</a></li>
                                         <li><a href="index.php?tab=ls">Khám cận lâm sàng</a></li>
                                         <li><a href="index.php?tab=kl">Kết luận</a></li>
-                                        <li><a href="index.php?tab=th">Tra cứu tổng hợp</a></li>
                                     </ul>
                                 </div>
                             </li>

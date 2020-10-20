@@ -56,7 +56,7 @@
 window.onscroll = function() {menuOnTop()};
 
 function menuOnTop() {
-  	if (document.body.scrollTop > 220 || document.documentElement.scrollTop > 220) {
+  	if (document.body.scrollTop > 180 || document.documentElement.scrollTop > 180) {
     	document.getElementById("menu").classList.add("ontop");
   	}else{
 		document.getElementById("menu").classList.remove("ontop");

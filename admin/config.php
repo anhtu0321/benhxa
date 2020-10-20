@@ -6,4 +6,5 @@ $pass = "tuanninh1";
 $database = "benhxa";
 $con = mysqli_connect($server,$user,$pass);
 mysqli_select_db($con,$database);
+mysqli_set_charset($con, 'UTF8');
 ?>

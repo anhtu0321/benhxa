@@ -145,6 +145,7 @@ $xml = str_replace('hoten', $rs["hoten"], $xml);
 $xml = str_replace('sohieu', $rs["sohieu"], $xml);
 $xml = str_replace('namsinh', $rs["namsinh"], $xml);
 $xml = str_replace('gioitinh', $rs["gioitinh"], $xml);
+$xml = str_replace('tendv', $rs["tendv"], $xml);
 $xml = str_replace('chieucao', $rs["chieucao"], $xml);
 $xml = str_replace('cannang', $rs["cannang"], $xml);
 $xml = str_replace('huyetap', $rs["huyetap"], $xml);

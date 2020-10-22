@@ -16,10 +16,10 @@
             <div class="col-xs-2 text-left">
                 <img src="img/cahieu.png" class="img-responsive" alt="Image">
             </div>
-            <div class="col-xs-5 text-center">
-                PHẦN MỀM QUẢN LÝ HỒ SƠ C1
+            <div class="col-xs-6 text-center title-top">
+                <h2>Phần Mềm Quản Lý Hồ Sơ C1</h2>
             </div>
-            <div class="col-xs-5 text-right">
+            <div class="col-xs-4 text-right">
                 
             </div>
         </div>

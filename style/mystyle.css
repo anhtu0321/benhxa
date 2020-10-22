@@ -39,6 +39,20 @@
     min-height:40px;
     line-height:40px;
 }
+@font-face{
+	font-family:sofia;
+	src:url(../VNF-SofiaRegular.ttf);
+	font-weight:normal;
+	font-style:normal;
+}
+.title-top h2 {
+  color: #0616ff;
+  font-family: "sofia", cursive !important;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
 .header{
     background: url("../img/header.png") no-repeat center;
     background-size: cover;
@@ -175,12 +189,15 @@
 }
 /* ****************** Xử lý main ******************* */
 .wraper {
-    background: #eeeff0;
+    background: #f2f2f3;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.5);
     min-height:500px;
 }
-/* ******************* CHI TIET - TIN ****************/
-
+/* ******************* HOME CHI TIET - TIN ****************/
+.img-home{
+    width:100%;
+    height:250px;
+}
 .chi-tiet-tin {
     background: #FFFFFF;
     padding: 0 10px 0 0;
@@ -256,6 +273,7 @@
     height: 50px;
     line-height:50px;
     color:#7a7a7a;
+    margin-bottom:50px;
 }
 .pagination>li {
     float: left;

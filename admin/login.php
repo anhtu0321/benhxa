@@ -6,7 +6,7 @@ session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Đăng nhập quản trị Website nội bộ Công an tỉnh</title>
+  <title>Đăng nhập trang quản trị</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,7 +19,7 @@ session_start(); ?>
 <div class="login-form w3_form">
 
       <div class="login-title w3_title">
-           <h1>QUẢN TRỊ WEBSITE CÔNG AN TỈNH</h1>
+           <h1>QUẢN TRỊ PHẦN MỀM QUẢN LÝ HỒ SƠ C1</h1>
       </div>
            <div class="login w3_login">
                 <h2 class="login-header w3_header">ĐĂNG NHẬP</h2>

@@ -33,9 +33,9 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thống kê <b class="caret"></b></a>
                                 <div>
                                     <ul class="dropdown-content">
-                                        <li><a href="#">Cán bộ cao cấp</a></li>
-                                        <li><a href="#">Thống kê theo đơn vị</a></li>
-                                        <li><a href="#">Thống kê tổng hợp</a></li>
+                                        <li><a href="index.php?tab=tkcc">Cán bộ cao cấp</a></li>
+                                        <li><a href="index.php?tab=tkdv">Thống kê theo đơn vị</a></li>
+                                        <li><a href="index.php?tab=tkth">Thống kê tổng hợp</a></li>
                                     </ul>
                                 </div>
                             </li>

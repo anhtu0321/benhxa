@@ -9,7 +9,7 @@
             
         </div>
         <div class="col-sm-12 footer-copyright">
-        Copy-right: Hoàng Văn Tú - PV01 - 0943465986
+        &copy; Copy-right: Hoàng Văn Tú - PV01 - 0943465986
         </div>
     </div>
 </div>

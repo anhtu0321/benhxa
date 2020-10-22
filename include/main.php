@@ -13,13 +13,16 @@
                 if($tab == "person"){ include("include/main/person.php");}
                 if($tab == "person_list"){ include("include/main/person_list.php");}
                 if($tab == "person_detail"){ include("include/main/person_detail.php");}
-                if($tab == "cb"){ include("include/main/cb.php");}
+               
                 if($tab == "nk"){ include("include/main/nk.php");}
                 if($tab == "ck"){ include("include/main/ck.php");}
                 if($tab == "ls"){ include("include/main/ls.php");}
                 if($tab == "kl"){ include("include/main/kl.php");}
-                if($tab == "th"){ include("include/main/th.php");}
-                // if($tab == "person"){ include("include/main/person.php");}
+                
+                if($tab == "tkcc"){ include("include/main/tkcc.php");}
+                if($tab == "tkdv"){ include("include/main/tkdv.php");}
+                if($tab == "tkth"){ include("include/main/tkth.php");}
+
                 if($tab == ""){ include("include/main/home.php");}
             ?>
         </div>

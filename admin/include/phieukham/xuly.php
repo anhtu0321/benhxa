@@ -7,7 +7,7 @@ $cannang=""; $chieucao=""; $huyetap=""; $mach=""; $benhtiensu="";
 $tuanhoan= ""; $hohap=""; $tieuhoa= ""; $tietnieu=""; $noitiet=""; $thankinh=""; $xuongkhop=""; 
 $taimuihong=""; $ranghammat=""; $mat= ""; 
 $mau= ""; $sieuam=""; $xqtimphoi=""; $nuoctieu="";
-$phanloai=""; $cacbenhtat=""; $bacsy=""; $nguoinhap= ""; $ngaynhap= date("Y-m-d"); 
+$phanloai=""; $cacbenhtat=""; $bacsy=""; $huongdieutri=""; $nguoinhap= ""; $ngaynhap= date("Y-m-d"); 
 
 if(isset($_GET["form"])){$form = $_GET["form"];}
 if(isset($_GET["id"])){$id = $_GET["id"];}
@@ -41,6 +41,7 @@ if(isset($_POST["nuoctieu"])){$nuoctieu = $_POST["nuoctieu"];}
 if(isset($_POST["phanloai"])){$phanloai = $_POST["phanloai"];}
 if(isset($_POST["cacbenhtat"])){$cacbenhtat = $_POST["cacbenhtat"];}
 if(isset($_POST["bacsy"])){$bacsy = $_POST["bacsy"];}
+if(isset($_POST["huongdieutri"])){$huongdieutri = $_POST["huongdieutri"];}
 if(isset($_SESSION["user_huye_name"])){$nguoinhap = $_SESSION["user_huye_name"];}
 
 // Lấy thông tin phân quyền
@@ -59,9 +60,9 @@ if(isset($_POST["them"])){
                 mysqli_query($con,$sql);
                 $sql = "insert into phieukham(nam,benhnhan,donvi,chucvu,cannang,chieucao,huyetap,mach,benhtiensu,tuanhoan,hohap,
                 tieuhoa,tietnieu,noitiet,thankinh,xuongkhop,taimuihong,ranghammat,mat,mau,sieuam,xqtimphoi,nuoctieu,phanloai,
-                cacbenhtat,bacsy,nguoinhap,ngaynhap) values('$nam','$sohieu','$donvi','$chucvu','$cannang','$chieucao','$huyetap','$mach','$benhtiensu','$tuanhoan','$hohap',
+                cacbenhtat,bacsy,huongdieutri,nguoinhap,ngaynhap) values('$nam','$sohieu','$donvi','$chucvu','$cannang','$chieucao','$huyetap','$mach','$benhtiensu','$tuanhoan','$hohap',
                 '$tieuhoa','$tietnieu','$noitiet','$thankinh','$xuongkhop','$taimuihong','$ranghammat','$mat','$mau','$sieuam','$xqtimphoi','$nuoctieu','$phanloai',
-                '$cacbenhtat','$bacsy','$nguoinhap','$ngaynhap')";
+                '$cacbenhtat','$bacsy','$huongdieutri','$nguoinhap','$ngaynhap')";
                 mysqli_query($con,$sql);
                 header("location: ../../index.php?form=".$form."&act=add");
             }else{ 
@@ -79,9 +80,9 @@ if(isset($_POST["them"])){
             mysqli_query($con,$sql);
             $sql = "insert into phieukham(nam,benhnhan,donvi,chucvu,cannang,chieucao,huyetap,mach,benhtiensu,tuanhoan,hohap,
             tieuhoa,tietnieu,noitiet,thankinh,xuongkhop,taimuihong,ranghammat,mat,mau,sieuam,xqtimphoi,nuoctieu,phanloai,
-            cacbenhtat,bacsy,nguoinhap,ngaynhap) values('$nam','$sohieu','$donvi','$chucvu','$cannang','$chieucao','$huyetap','$mach','$benhtiensu','$tuanhoan','$hohap',
+            cacbenhtat,bacsy,huongdieutri,nguoinhap,ngaynhap) values('$nam','$sohieu','$donvi','$chucvu','$cannang','$chieucao','$huyetap','$mach','$benhtiensu','$tuanhoan','$hohap',
             '$tieuhoa','$tietnieu','$noitiet','$thankinh','$xuongkhop','$taimuihong','$ranghammat','$mat','$mau','$sieuam','$xqtimphoi','$nuoctieu','$phanloai',
-            '$cacbenhtat','$bacsy','$nguoinhap','$ngaynhap')";
+            '$cacbenhtat','$bacsy','$huongdieutri','$nguoinhap','$ngaynhap')";
             mysqli_query($con,$sql);
             header("location: ../../index.php?form=".$form."&act=add");
         }
@@ -97,7 +98,7 @@ if(isset($_POST["sua"])){
         echo $sql;
         $sql = "update phieukham set nam='$nam',benhnhan='$sohieu', donvi='$donvi', chucvu='$chucvu', cannang='$cannang', chieucao='$chieucao', huyetap='$huyetap', mach='$mach', benhtiensu='$benhtiensu', tuanhoan='$tuanhoan', hohap='$hohap',
             tieuhoa='$tieuhoa', tietnieu='$tietnieu', noitiet='$noitiet', thankinh='$thankinh', xuongkhop='$xuongkhop', taimuihong='$taimuihong', ranghammat='$ranghammat', mat='$mat', mau='$mau', sieuam='$sieuam', xqtimphoi='$xqtimphoi', nuoctieu='$nuoctieu', phanloai='$phanloai',
-            cacbenhtat='$cacbenhtat', bacsy='$bacsy', nguoinhap='$nguoinhap' where id = '$id'";
+            cacbenhtat='$cacbenhtat', bacsy='$bacsy', huongdieutri='$huongdieutri', nguoinhap='$nguoinhap' where id = '$id'";
         mysqli_query($con,$sql);
         echo $sql;
         header("location: ../../index.php?form=".$form."&act=edit&id=".$id);

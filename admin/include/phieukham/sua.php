@@ -5,8 +5,8 @@ $sql = "select benhnhan.hoten, benhnhan.namsinh, benhnhan.gioitinh, benhnhan.soh
 phieukham.chucvu, benhnhan.nhommau,phieukham.nam, phieukham.cannang, phieukham.chieucao, phieukham.huyetap,phieukham.mach,
 phieukham.benhtiensu, phieukham.tuanhoan, phieukham.hohap, phieukham.tieuhoa, phieukham.tietnieu, phieukham.noitiet,
 phieukham.thankinh, phieukham.xuongkhop, phieukham.taimuihong, phieukham.ranghammat, phieukham.mat, phieukham.mau,
-phieukham.sieuam, phieukham.xqtimphoi, phieukham.nuoctieu, phieukham.phanloai, phieukham.cacbenhtat, phieukham.bacsy
-from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu where phieukham.id = '$id'";
+phieukham.sieuam, phieukham.xqtimphoi, phieukham.nuoctieu, phieukham.phanloai, phieukham.cacbenhtat, phieukham.bacsy, 
+phieukham.huongdieutri from phieukham left join benhnhan on phieukham.benhnhan = benhnhan.sohieu where phieukham.id = '$id'";
 $tb = mysqli_query($con,$sql);
 $rs = mysqli_fetch_array($tb);
 ?>
@@ -202,7 +202,13 @@ $rs = mysqli_fetch_array($tb);
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Phân loại sức khỏe</label>
             <div class="col-sm-9">
-                <input type="text" name="phanloai" class="form-control" value="<?php echo $rs["phanloai"]?>" placeholder="Phân loại sức khỏe">
+                <select name="phanloai" class="form-control">
+                        <option value="1" <?php if($rs["phanloai"]==1){echo "selected='selected'";}?>>Loại I</option>
+                        <option value="2" <?php if($rs["phanloai"]==2){echo "selected='selected'";}?>>Loại II</option>
+                        <option value="3" <?php if($rs["phanloai"]==3){echo "selected='selected'";}?>>Loại III</option>
+                        <option value="4" <?php if($rs["phanloai"]==4){echo "selected='selected'";}?>>Loại IV</option>
+                        <option value="5" <?php if($rs["phanloai"]==5){echo "selected='selected'";}?>>Loại V</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -215,6 +221,16 @@ $rs = mysqli_fetch_array($tb);
             <label for="" class="control-label col-sm-3">Bác sỹ kết luận</label>
             <div class="col-sm-9">
                 <input type="text" name="bacsy" class="form-control" value="<?php echo $rs["bacsy"]?>" placeholder="Bác sỹ kết luận">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Hướng điều trị</label>
+            <div class="col-sm-9">
+                <select name="huongdieutri" class="form-control">
+                        <option value="1" <?php if($rs["huongdieutri"] == "1"){echo "selected='selected'";}?>>Bệnh xá Công an tỉnh</option>
+                        <option value="2"<?php if($rs["huongdieutri"] == "2"){echo "selected='selected'";}?>>Nơi ĐK khám chữa bệnh ban đầu</option>
+                        <option value="3"<?php if($rs["huongdieutri"] == "3"){echo "selected='selected'";}?>>Bệnh viện 19.8</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

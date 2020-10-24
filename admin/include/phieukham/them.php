@@ -190,7 +190,13 @@
         <div class="form-group">
             <label for="" class="control-label col-sm-3">Phân loại sức khỏe</label>
             <div class="col-sm-9">
-                <input type="text" name="phanloai" class="form-control" placeholder="Phân loại sức khỏe">
+                <select name="phanloai" class="form-control">
+                        <option value="1">Loại I</option>
+                        <option value="2">Loại II</option>
+                        <option value="3">Loại III</option>
+                        <option value="4">Loại IV</option>
+                        <option value="5">Loại V</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
@@ -203,6 +209,16 @@
             <label for="" class="control-label col-sm-3">Bác sỹ kết luận</label>
             <div class="col-sm-9">
                 <input type="text" name="bacsy" class="form-control" placeholder="Bác sỹ kết luận">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label col-sm-3">Hướng điều trị</label>
+            <div class="col-sm-9">
+                <select name="huongdieutri" class="form-control">
+                        <option value="1">Bệnh xá Công an tỉnh</option>
+                        <option value="2">Nơi ĐK khám chữa bệnh ban đầu</option>
+                        <option value="3">Bệnh viện 19.8</option>
+                </select>
             </div>
         </div>
         <div class="form-group">

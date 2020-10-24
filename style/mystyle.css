@@ -14,6 +14,9 @@
 .border {
     border: 1px solid #6DCFF6;
 }
+.border-bottom {
+    border-bottom: 2px solid #b92222;
+}
 .no-bold {
     font-weight: normal;
 }
@@ -406,4 +409,30 @@
     width:65%;
     float:right;
     text-align: center;
+}
+/*************** THỐNG KÊ VÀ IN THỐNG KÊ **************/
+.thongke{
+    width: 297mm;
+    overflow:hidden;
+    min-height:21cm;
+    padding: 0.5cm 0.5cm 0.5cm 0.5cm;
+    margin-left:auto;
+    margin-right:auto;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.thongke-header{
+    text-align: center;
+    font-weight: bold;
+    font-size:16px !important;
+}
+.font-time-tk div,
+.font-time-tk b,
+.font-time-tk p,
+.font-time-tk i,
+.font-time-tk th,
+.font-time-tk td
+{
+    font-family: 'Times New Roman', Times, serif !important;
+    font-size:12px;
 }

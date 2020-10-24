@@ -1,76 +1,16 @@
+<body onload="window.print();">
+    <link rel="stylesheet" type="text/css" href="style/bootstrap341/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/mystyle.css">
 <?php 
-    $nam="2020";
-    $donvi="";
-    $cvmax="";
-    $cvmin="";
-    if(isset($_POST["nam"])){$nam = $_POST["nam"];}
-    if(isset($_POST["donvi"])){$donvi = $_POST["donvi"];}
-    if(isset($_POST["cvmax"])){$cvmax = $_POST["cvmax"];}
-    if(isset($_POST["cvmin"])){$cvmin = $_POST["cvmin"];}
+    include("admin/config.php");
+    $nam="";$donvi="";$cvmax="";$cvmin="";
+    if(isset($_GET["nam"])){$nam = $_GET["nam"];}
+    if(isset($_GET["donvi"])){$donvi = $_GET["donvi"];}
+    if(isset($_GET["cvmax"])){$cvmax = $_GET["cvmax"];}
+    if(isset($_GET["cvmin"])){$cvmin = $_GET["cvmin"];}
 ?>
 <!-- Form -->
-<div class="col-sm-12 col-md-12 col-lg-12">
-    <p class="tdmuctin"><span class="glyphicon glyphicon-th"></span> Thống kê tổng hợp</p>
-    <form action="index.php?tab=tkth" method="POST" role="form" class="form-horizontal">
-        <div class="form-group">
-            <label for="" class="control-label col-sm-2">Năm</label>
-            <div class="col-sm-3">
-                <input type="text" name="nam" class="form-control" value="<?php echo $nam;?>" placeholder="Năm">
-            </div>
-            <label for="" class="control-label col-sm-2">Đơn vị</label>
-            <div class="col-sm-3">
-                <select name="donvi" class="form-control" placeholder="Đơn vị Công tác">
-                    <option value="">----- Tất cả -----</option>
-                    <?php
-                        while ($rsdv = mysqli_fetch_array($tbdonvi)){
-                    ?>
-                            <option value="<?php echo $rsdv["id"];?>" <?php if($rsdv["id"]==$donvi){echo "selected='selected'";}?>><?php echo $rsdv["tendv"];?></option>
-                    <?php
-                        }
-                    ?>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="" class="control-label col-sm-2">Chức vụ thấp nhất</label>
-            <div class="col-sm-3">
-                <select name="cvmax" class="form-control">
-                    <option value="1" <?php if($cvmax=="1"){echo "selected='selected'";}?>>Giám đốc</option>
-                    <option value="2" <?php if($cvmax=="2"){echo "selected='selected'";}?>>Phó Giám đốc</option>
-                    <option value="3" <?php if($cvmax=="3"){echo "selected='selected'";}?>>Trưởng phòng hoặc tương đương</option>
-                    <option value="4" <?php if($cvmax=="4"){echo "selected='selected'";}?>>Phó Trưởng phòng hoặc tương đương</option>
-                    <option value="5" <?php if($cvmax=="5"){echo "selected='selected'";}?>>Đội trưởng hoặc tương đương</option>
-                    <option value="6" <?php if($cvmax=="6"){echo "selected='selected'";}?>>Phó Đội trưởng hoặc tương đương</option>
-                    <option value="7" <?php if($cvmax=="7"){echo "selected='selected'";}?>>Cán bộ</option>
-                </select>
-            </div>
-            <label for="" class="control-label col-sm-2">Chức vụ cao nhất</label>
-            <div class="col-sm-3">
-            <select name="cvmin" class="form-control">
-                    <option value="1" <?php if($cvmin=="1"){echo "selected='selected'";}?>>Giám đốc</option>
-                    <option value="2" <?php if($cvmin=="2"){echo "selected='selected'";}?>>Phó Giám đốc</option>
-                    <option value="3" <?php if($cvmin=="3"){echo "selected='selected'";}?>>Trưởng phòng hoặc tương đương</option>
-                    <option value="4" <?php if($cvmin=="4"){echo "selected='selected'";}?>>Phó Trưởng phòng hoặc tương đương</option>
-                    <option value="5" <?php if($cvmin=="5"){echo "selected='selected'";}?>>Đội trưởng hoặc tương đương</option>
-                    <option value="6" <?php if($cvmin=="6"){echo "selected='selected'";}?>>Phó Đội trưởng hoặc tương đương</option>
-                    <option value="7" <?php if($cvmin=="7"){echo "selected='selected'";}?>>Cán bộ</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-5 col-sm-push-2">
-                <button type="submit" class="btn btn-success" name="taidulieu"><span class="glyphicon glyphicon-search"></span> Thống kê</button>
-            </div>
-        </div>
-        
-    </form>
-</div>
-<!-- Nếu nút tải dữ liệu được click thì thực hiện -->
 <?php 
-if(isset($_POST["taidulieu"])){
-    ?>
-    <!-- Tính toán thông số để phân trang -->
-    <?php 
         //Lấy dữ liệu trong cơ sở dữ liệu
         $sqlbenhnhan = "select phieukham.id, phieukham.nam, phieukham.benhnhan, phieukham.sieuam, phieukham.mau, 
         phieukham.xqtimphoi, phieukham.nuoctieu, phieukham.cacbenhtat, phieukham.phanloai, phieukham.huongdieutri,  
@@ -185,10 +125,4 @@ if(isset($_POST["taidulieu"])){
         </div>
     </div>
     <!-- Hết -->
-    <div class="col-sm-10 text-right margin-top-5 margin-bottom-5">
-        <button class="btn btn-sm btn-warning" onClick="history.go(-1);"><i class="glyphicon glyphicon-circle-arrow-left"></i> Quay lại</button>
-        <a class="btn btn-sm btn-info" onclick = "window.open('inthongketh.php?nam=<?php echo $nam;?>&donvi=<?php echo $donvi;?>&cvmax=<?php echo $cvmax;?>&cvmin=<?php echo $cvmin;?>', 'windowChild', 'width=1200, height=800, top=30px, left=75px')" ><i class="glyphicon glyphicon-print"></i> In phiếu khám</a>
-        <!-- <a class="btn btn-sm btn-success" href="#"><i class="glyphicon glyphicon-download-alt"></i> Tải File Word</a> -->
-    </div>
-
-<?php }?>
+</body>

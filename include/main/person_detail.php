@@ -10,6 +10,7 @@
     on phieukham.donvi = donvi.id where phieukham.id = '$id'";
     $tb = mysqli_query($con,$sql);
     $rs = mysqli_fetch_array($tb);
+    $phanloai="";
 ?>
 <div class="phieu font-time">
     <div class="header-left">
@@ -110,7 +111,30 @@
     </table>
     <div class="col-sm-12 coban">
         <p><b>4. Kết luận:</b></p>
-        <p>- Phân loại sức khỏe: <?php echo $rs["phanloai"];?></p>
+        <p>
+            - Phân loại sức khỏe: 
+            <?php 
+                switch($rs["phanloai"]){
+                    case 1:
+                        $phanloai="Loại I";
+                    break;
+                    case 2:
+                        $phanloai="Loại II";
+                    break;
+                    case 3:
+                        $phanloai="Loại III";
+                    break;
+                    case 4:
+                        $phanloai="Loại IV";
+                    break;
+                    case 5:
+                        $phanloai="Loại V";
+                    break;
+                    default:
+                }
+                echo $phanloai;
+            ?>
+        </p>
         <p>- Các bệnh tật (nếu có): <?php echo $rs["cacbenhtat"];?></p>
     </div>
     <div class="footer-left">
@@ -165,7 +189,7 @@ $xml = str_replace('mmmm', $rs["mau"], $xml);
 $xml = str_replace('mama', $rs["mat"], $xml);
 $xml = str_replace('sieuam', $rs["sieuam"], $xml);
 $xml = str_replace('xqtimphoi', $rs["xqtimphoi"], $xml);
-$xml = str_replace('phanloai', $rs["phanloai"], $xml);
+$xml = str_replace('phanloai', $phanloai, $xml);
 $xml = str_replace('cacbenhtat', $rs["cacbenhtat"], $xml);
 $xml = str_replace('bacsy', $rs["bacsy"], $xml);
 // Ghi lại nội dung đã được đổi vào file

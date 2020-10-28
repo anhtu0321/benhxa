@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    if($_SESSION["user_huye_id"] == ""){header("location: login.php");}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

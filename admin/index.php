@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if($_SESSION["user_huye_id"] == ""){header("location: login.php");}
+    if($_SESSION["user_huye_id"] == ""){header("location: ../login.php");}
     else{
         include("config.php"); 
         $sql = "select * from chucnang order by thutu ASC";

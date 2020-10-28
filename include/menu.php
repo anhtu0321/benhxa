@@ -40,6 +40,7 @@
                                 </div>
                             </li>
                             <li><a href="admin/index.php">Quản trị</a>
+                            <li><a href="admin/thoat.php">Thoát</a>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>

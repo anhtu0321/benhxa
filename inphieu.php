@@ -114,7 +114,29 @@
     </table>
         <div class="col-sm-12 coban">
             <p><b>4. Kết luận:</b></p>
-            <p>- Phân loại sức khỏe: <?php echo $rs["phanloai"];?></p>
+            <p>
+            - Phân loại sức khỏe: 
+            <?php 
+                switch($rs["phanloai"]){
+                    case 1:
+                        echo "Loại I";
+                    break;
+                    case 2:
+                        echo "Loại II";
+                    break;
+                    case 3:
+                        echo "Loại III";
+                    break;
+                    case 4:
+                        echo "Loại IV";
+                    break;
+                    case 5:
+                        echo "Loại V";
+                    break;
+                    default:
+                }
+            ?>
+        </p>
             <p>- Các bệnh tật (nếu có): <?php echo $rs["cacbenhtat"];?></p>
         </div>
         <div class="footer-left">

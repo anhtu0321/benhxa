@@ -1,6 +1,6 @@
 <?php 
 ob_start();
-include("config.php");
+include("admin/config.php");
 session_start(); ?>
 
 <!DOCTYPE html>
@@ -12,14 +12,14 @@ session_start(); ?>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript">addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 	function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link rel="stylesheet" href="css/stylelogin.css">
+<link rel="stylesheet" href="style/stylelogin.css">
 
   </head>
   <body>
 <div class="login-form w3_form">
 
       <div class="login-title w3_title">
-           <h1>QUẢN TRỊ PHẦN MỀM QUẢN LÝ HỒ SƠ C1</h1>
+           <h1>MỀM QUẢN LÝ HỒ SƠ C1</h1>
       </div>
            <div class="login w3_login">
                 <h2 class="login-header w3_header">ĐĂNG NHẬP</h2>

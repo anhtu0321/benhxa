@@ -17,7 +17,7 @@ if(sohieu){sohieu.addEventListener("keyup",delaylocbenhnhan);}
 if(hoten){hoten.addEventListener("keyup",delaylocbenhnhan);}
 function delaylocbenhnhan(){
 	if(hoten.delay){clearTimeout(hoten.delay);}
-	hoten.delay = setTimeout(locketqua,1000);
+	hoten.delay = setTimeout(locketqua,300);
 }
 function locketqua(){
 	http.open("post","include/phieukham/jslocketqua.php",true);
